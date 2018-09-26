@@ -150,7 +150,7 @@
             "sources" : [
                 {
                     "type": "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/shotwell",
+                    "url" : "https://gitlab.gnome.org/GNOME/shotwell.git/",
                     "commit" : "2cdf52b48b25a5aea452a7d2c671057729cd381d"
                 }
             ]
