@@ -65,8 +65,8 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://datapacket.dl.sourceforge.net/project/gphoto/libgphoto/2.5.18/libgphoto2-2.5.18.tar.bz2",
-                    "sha256" : "5b17b89d7ca0ec35c72c94ac3701e87d49e52371f9509b8e5c08c913ae57a7ec"
+                    "url" : "https://datapacket.dl.sourceforge.net/project/gphoto/libgphoto/2.5.19/libgphoto2-2.5.19.tar.bz2",
+                    "sha256" : "62523e52e3b8542301e072635b518387f2bd0948347775cf10cb2da9a6612c63"
                 }
             ],
             "config-opts" : ["--disable-introspection", "--disable-docs"]
@@ -151,7 +151,8 @@
                 {
                     "type": "git",
                     "url" : "https://gitlab.gnome.org/GNOME/shotwell.git/",
-                    "commit" : "2cdf52b48b25a5aea452a7d2c671057729cd381d"
+                    "tag": "shotwell-0.30.1",
+                    "commit" : "3e6cd4ac5f0436aea4807650625f30d159ad2a96"
                 }
             ]
         }
