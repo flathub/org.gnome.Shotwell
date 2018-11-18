@@ -1,7 +1,7 @@
 {
     "app-id": "org.gnome.Shotwell",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "3.28",
+    "runtime-version": "3.30",
     "branch": "stable",
     "sdk": "org.gnome.Sdk",
     "command" : "shotwell",
@@ -73,6 +73,7 @@
         },
         {
             "name": "liboauth",
+            "config-opts": [ "--enable-nss" ],
             "sources": [
                 {
                     "type": "archive",
