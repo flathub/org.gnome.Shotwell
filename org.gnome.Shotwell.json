@@ -124,7 +124,7 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/gexiv2.git/",
-                    "commit" : "4cb516eb6550b3671642adece7ef6266dfcffa6d"
+                    "commit" : "e3046adf3029db6dd6f3dc7edab30b18ff7d7014"
                 }
             ]
         },
