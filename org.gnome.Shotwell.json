@@ -101,7 +101,12 @@
         {
             "name": "exiv2",
             "cleanup": [ "/bin" ],
-            "buildsystem": "cmake",
+            "buildsystem": "cmake-ninja",
+            "config-opts" : [
+                "-DCMAKE_BUILD_TYPE=Release",
+                "-DEXIV2_BUILD_EXIV2_COMMAND=OFF",
+                "-DEXIV2_BUILD_SAMPLES=OFF"
+            ],
             "sources": [
                 {
                     "type": "git",
