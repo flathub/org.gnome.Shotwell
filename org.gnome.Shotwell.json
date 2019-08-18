@@ -154,7 +154,7 @@
                 {
                     "type": "git",
                     "url" : "https://gitlab.gnome.org/GNOME/shotwell.git/",
-                    "commit" : "bbd7c7594257dbe7718adaa7b80a45f78a52c282"
+                    "commit" : "30c394778f630c9bbf6a74c004443f2719af423a"
                 }
             ]
         }
