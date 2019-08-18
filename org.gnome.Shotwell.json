@@ -86,7 +86,7 @@
             "name": "libgdata",
             "buildsystem" : "meson",
             "cleanup": ["/share/gtk-doc"],
-            "config-opts": [ "-Dintrospection=false", "-Dalways-build-tests=false", "-Dgoa=disabled", "-Dgtk_doc=false"],
+            "config-opts": [ "-Dintrospection=false", "-Dalways_build_tests=false", "-Dgoa=disabled", "-Dgtk_doc=false"],
                 "sources": [
                     {
                         "type": "archive",
