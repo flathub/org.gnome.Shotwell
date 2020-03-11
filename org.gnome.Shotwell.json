@@ -154,12 +154,12 @@
         {
             "name": "shotwell",
             "buildsystem": "meson",
-            "config-opts" : ["-Dudev=false", "-Dinstall-apport-hook=false", "-Dface-detection=false"],
+            "config-opts" : ["-Dudev=false", "-Dinstall-apport-hook=false", "-Dface-detection=false", "-Dfatal_warnings=false"],
             "sources" : [
                 {
                     "type": "git",
                     "url" : "https://gitlab.gnome.org/GNOME/shotwell.git/",
-                    "commit" : "a132254e2673fec94076ba8a70cb817a87256073"
+                    "commit" : "e5be32fb6ec28e88a2e0e898b447fe4492a71704"
                 }
             ]
         }
