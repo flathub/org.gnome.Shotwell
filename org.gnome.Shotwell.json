@@ -45,8 +45,8 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://download.gnome.org/sources/libgee/0.20/libgee-0.20.2.tar.xz",
-                    "sha256" : "9e035c4b755f46bfae70ba81cdcf8328b03f554373cec8c816e8b5680f85353c"
+                    "url" : "https://download.gnome.org/sources/libgee/0.20/libgee-0.20.3.tar.xz",
+                    "sha256" : "d0b5edefc88cbca5f1709d19fa62aef490922c6577a14ac4e7b085507911a5de"
                 }
             ],
             "config-opts" : ["--disable-introspection", "--disable-docs"]
@@ -68,8 +68,9 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://downloads.sourceforge.net/project/gphoto/libgphoto/2.5.23/libgphoto2-2.5.23.tar.bz2",
-                    "sha256" : "d8af23364aa40fd8607f7e073df74e7ace05582f4ba13f1724d12d3c97e8852d"
+                    "url" : "https://sourceforge.net/projects/gphoto/files/libgphoto/2.5.24/libgphoto2-2.5.24.tar.bz2/download",
+                    "sha256" : "fd3c578769f0fa389c1e68120f224bd98477aa3d82d16b82746c1266c0d4fb31",
+                    "dest-filename" : "libgphoto2-2.5.24.tar.bz2"
                 }
             ],
             "config-opts" : ["--disable-introspection", "--disable-docs"]
@@ -80,8 +81,9 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url" : "http://downloads.sourceforge.net/project/liboauth/liboauth-1.0.3.tar.gz",
-                    "sha256": "0df60157b052f0e774ade8a8bac59d6e8d4b464058cc55f9208d72e41156811f"
+                    "url" : "https://sourceforge.net/projects/liboauth/files/liboauth-1.0.3.tar.gz/download",
+                    "sha256" : "0df60157b052f0e774ade8a8bac59d6e8d4b464058cc55f9208d72e41156811f",
+                    "dest-filename" : "liboauth-1.0.3.tar.gz"
                 }
             ]
         },
@@ -93,8 +95,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/libgdata/0.17/libgdata-0.17.11.tar.xz",
-                        "sha256": "6b9917122e4def6e6f78bcb660e49e146540832e296abcb5cde99829a04ea986"
+                        "url": "https://download.gnome.org/sources/libgdata/0.17/libgdata-0.17.12.tar.xz",
+                        "sha256": "a0fd6f8820e8bae019c1f6ffab5af7fcd6d7f147915bb968b56df3ad61b42318"
                     }
                 ]
         },
