@@ -57,9 +57,9 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://sourceforge.net/projects/gphoto/files/libgphoto/2.5.24/libgphoto2-2.5.24.tar.bz2/download",
-                    "sha256" : "fd3c578769f0fa389c1e68120f224bd98477aa3d82d16b82746c1266c0d4fb31",
-                    "dest-filename" : "libgphoto2-2.5.24.tar.bz2"
+                    "url" : "https://sourceforge.net/projects/gphoto/files/libgphoto/2.5.25/libgphoto2-2.5.25.tar.bz2/download",
+                    "sha256" : "7c0e98f438c2b128186afe16ce7833a12fa36f87d01467e837b9d27e7a167f3a",
+                    "dest-filename" : "libgphoto2-2.5.25.tar.bz2"
                 }
             ],
             "config-opts" : ["--disable-introspection", "--disable-docs"]
@@ -84,8 +84,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/libgdata/0.17/libgdata-0.17.12.tar.xz",
-                        "sha256": "a0fd6f8820e8bae019c1f6ffab5af7fcd6d7f147915bb968b56df3ad61b42318"
+                        "url": "https://download.gnome.org/sources/libgdata/0.17/libgdata-0.17.13.tar.xz",
+                        "sha256": "eab9ef792c3c2b9ece19d45aea15225aba8df2521bc12785b1b2d3318d8c472e"
                     }
                 ]
         },
@@ -108,8 +108,9 @@
         },
         {
             "name": "gexiv2",
+            "buildsystem" : "meson",
             "cleanup" : ["/lib/girepository-1.0", "/share/gir-1.0"],
-            "config-opts" : ["--without-python2-girdir", "--without-python3-girdir"],
+            "config-opts" : ["-Dpython2_girdir=no", "-Dpython3_girdir=no"],
             "build-options" : {
                 "env": {
                     "PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_GIRDIR": "/app/share/gir-1.0",
@@ -120,7 +121,7 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/gexiv2.git/",
-                    "commit" : "e3046adf3029db6dd6f3dc7edab30b18ff7d7014"
+                    "commit" : "a904953bb912ce383227a1a464bbc76b837046c7"
                 }
             ]
         },
@@ -131,8 +132,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url" : "https://www.libraw.org/data/LibRaw-0.19.5.tar.gz",
-                    "sha256" : "40a262d7cc71702711a0faec106118ee004f86c86cc228281d12d16da03e02f5"
+                    "url" : "https://www.libraw.org/data/LibRaw-0.20.0.tar.gz",
+                    "sha256" : "1f0a383da2ce9f409087facd28261decbf6be72cc90c78cd003b0766e4d694a3"
                 },
                 {
                     "type": "patch",
