@@ -1,7 +1,7 @@
 {
     "app-id": "org.gnome.Shotwell",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "3.38",
+    "runtime-version": "40",
     "branch": "stable",
     "sdk": "org.gnome.Sdk",
     "command" : "shotwell",
@@ -149,7 +149,7 @@
                 {
                     "type": "git",
                     "url" : "https://gitlab.gnome.org/GNOME/shotwell.git/",
-                    "commit" : "61e1368ca106e739df8631ba6acbaf67c8dde0de"
+                    "commit" : "6e41bddd346674e74feb72c2029070811f048493"
                 }
             ]
         }
