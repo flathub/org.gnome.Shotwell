@@ -45,8 +45,8 @@
             "sources" : [
                 {
                 "type" : "archive",
-                    "url" : "https://github.com/libusb/libusb/releases/download/v1.0.23/libusb-1.0.23.tar.bz2",
-                    "sha256" : "db11c06e958a82dac52cf3c65cb4dd2c3f339c8a988665110e0d24d19312ad8d"
+                    "url" : "https://github.com/libusb/libusb/archive/v1.0.24.tar.gz",
+                    "sha256" : "b7724c272dfc5713dce88ff717efd60f021ca5b7c8e30f08ebb2c42d2eea08ae"
                 }
             ],
             "config-opts" : ["--disable-udev"]
@@ -57,9 +57,9 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://sourceforge.net/projects/gphoto/files/libgphoto/2.5.25/libgphoto2-2.5.25.tar.bz2/download",
-                    "sha256" : "7c0e98f438c2b128186afe16ce7833a12fa36f87d01467e837b9d27e7a167f3a",
-                    "dest-filename" : "libgphoto2-2.5.25.tar.bz2"
+                    "url" : "https://github.com/gphoto/libgphoto2/releases/download/v2.5.27/libgphoto2-2.5.27.tar.xz",
+                    "sha256" : "a7253bd18c6ef65352150ac36a668f883a5ad2634eb6455b3ca9aa6ac98d0073",
+                    "dest-filename" : "libgphoto2-2.5.27.tar.xz"
                 }
             ],
             "config-opts" : ["--disable-introspection", "--disable-docs"]
@@ -102,7 +102,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/Exiv2/exiv2/",
-                    "commit" : "70f9405fafbe19c7bab94b36a1267c4332dc8a8a"
+                    "commit" : "d3f7e92240a5e8bb827846c6094f46f9c7b53585"
                 }
             ]
         },
@@ -121,7 +121,7 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/gexiv2.git/",
-                    "commit" : "a904953bb912ce383227a1a464bbc76b837046c7"
+                    "commit" : "e4d65b31cd77f28ef248117e161de9d8cc31d712"
                 }
             ]
         },
