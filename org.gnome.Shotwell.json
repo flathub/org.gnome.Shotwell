@@ -153,7 +153,8 @@
                 }
             ],
             "post-install" : [
-                "mv /app/share/applications/shotwell-viewer.desktop /app/share/applications/org.gnome.Shotwell.Viewer.desktop"
+                "mv /app/share/applications/shotwell-viewer.desktop /app/share/applications/org.gnome.Shotwell.Viewer.desktop",
+                "sed -e '/^Icon=/c Icon=org.gnome.Shotwell'"
             ]
         }
     ]
