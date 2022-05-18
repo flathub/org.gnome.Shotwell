@@ -1,17 +1,13 @@
 {
     "app-id": "org.gnome.Shotwell",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "41",
-    "branch": "stable",
+    "runtime-version": "42",
     "sdk": "org.gnome.Sdk",
     "command" : "shotwell",
     "rename-desktop-file" : "shotwell.desktop",
     "rename-icon" : "shotwell",
     "rename-appdata-file" : "shotwell.appdata.xml",
     "finish-args": [
-        "--env=DCONF_USER_CONFIG_DIR=.config/dconf",
-        "--filesystem=~/.config/dconf:ro",
-        "--filesystem=xdg-run/dconf",
         "--filesystem=/media",
         "--filesystem=/run/media",
         "--filesystem=xdg-download",
@@ -20,13 +16,13 @@
         "--share=network",
         "--device=all",
         "--socket=wayland",
-        "--socket=x11",
-        "--talk-name=ca.desrt.dconf",
+        "--socket=fallback-x11",
         "--talk-name=org.freedesktop.FileManager1",
-        "--talk-name=org.gnome.SettingsDaemon",
         "--talk-name=org.gtk.vfs",
         "--talk-name=org.gtk.vfs.*",
-        "--env=GSETTINGS_BACKEND=dconf"
+        "--filesystem=xdg-run/gvfs",
+        "--filesystem=xdg-run/gvfsd",
+        "--talk-name=org.freedesktop.secrets"
     ],
     "cleanup" : [
         "/include",
@@ -45,8 +41,8 @@
             "sources" : [
                 {
                 "type" : "archive",
-                    "url" : "https://github.com/libusb/libusb/archive/v1.0.24.tar.gz",
-                    "sha256" : "b7724c272dfc5713dce88ff717efd60f021ca5b7c8e30f08ebb2c42d2eea08ae"
+                    "url" : "https://github.com/libusb/libusb/archive/v1.0.26.tar.gz",
+                    "sha256" : "a09bff99c74e03e582aa30759cada218ea8fa03580517e52d463c59c0b25e240"
                 }
             ],
             "config-opts" : ["--disable-udev"]
@@ -57,9 +53,8 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://github.com/gphoto/libgphoto2/releases/download/v2.5.27/libgphoto2-2.5.27.tar.xz",
-                    "sha256" : "a7253bd18c6ef65352150ac36a668f883a5ad2634eb6455b3ca9aa6ac98d0073",
-                    "dest-filename" : "libgphoto2-2.5.27.tar.xz"
+                    "url" : "https://github.com/gphoto/libgphoto2/releases/download/v2.5.29/libgphoto2-2.5.29.tar.xz",
+                    "sha256" : "4b439ec10af3ae4d7696d4a75655a1fe259dea5c1ccc692af58a0cc5024e7754"
                 }
             ],
             "config-opts" : ["--disable-introspection", "--disable-docs"]
@@ -69,10 +64,15 @@
             "config-opts": [ "--enable-nss" ],
             "sources": [
                 {
-                    "type": "archive",
-                    "url" : "https://sourceforge.net/projects/liboauth/files/liboauth-1.0.3.tar.gz/download",
-                    "sha256" : "0df60157b052f0e774ade8a8bac59d6e8d4b464058cc55f9208d72e41156811f",
-                    "dest-filename" : "liboauth-1.0.3.tar.gz"
+                    "type": "git",
+                    "url" : "https://github.com/x42/liboauth.git",
+                    "commit" : "c26f038eb9a4d97782e3f9f1e3da2b9356581869"
+                },
+                {
+                    "type": "shell",
+                    "commands": [
+                        "autoreconf -fiv"
+                    ]
                 }
             ]
         },
@@ -84,8 +84,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/libgdata/0.17/libgdata-0.17.13.tar.xz",
-                        "sha256": "eab9ef792c3c2b9ece19d45aea15225aba8df2521bc12785b1b2d3318d8c472e"
+                        "url": "https://download.gnome.org/sources/libgdata/0.18/libgdata-0.18.1.tar.xz",
+                        "sha256": "dd8592eeb6512ad0a8cf5c8be8c72e76f74bfe6b23e4dd93f0756ee0716804c7"
                     }
                 ]
         },
@@ -102,7 +102,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/Exiv2/exiv2/",
-                    "commit" : "d3f7e92240a5e8bb827846c6094f46f9c7b53585"
+                    "commit" : "ad5484cb1eaba3ad0e49b290d244f6b1ee9ff076"
                 }
             ]
         },
@@ -119,9 +119,9 @@
             },
             "sources": [
                 {
-                    "type": "git",
-                    "url": "https://gitlab.gnome.org/GNOME/gexiv2.git/",
-                    "commit" : "e4d65b31cd77f28ef248117e161de9d8cc31d712"
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/gexiv2/0.14/gexiv2-0.14.0.tar.xz",
+                    "sha256" : "e58279a6ff20b6f64fa499615da5e9b57cf65ba7850b72fafdf17221a9d6d69e"
                 }
             ]
         },
@@ -132,12 +132,18 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url" : "https://www.libraw.org/data/LibRaw-0.20.0.tar.gz",
-                    "sha256" : "1f0a383da2ce9f409087facd28261decbf6be72cc90c78cd003b0766e4d694a3"
+                    "url" : "https://www.libraw.org/data/LibRaw-0.20.2.tar.gz",
+                    "sha256" : "dc1b486c2003435733043e4e05273477326e51c3ea554c6864a4eafaff1004a6"
                 },
                 {
                     "type": "patch",
                     "path": "libraw-pkgconfig.patch"
+                },
+                {
+                    "type": "shell",
+                    "commands": [
+                        "autoreconf -fiv"
+                    ]
                 }
             ]
         },
@@ -147,9 +153,9 @@
             "config-opts" : ["-Dudev=false", "-Dinstall-apport-hook=false", "-Dface-detection=false", "-Dfatal_warnings=false"],
             "sources" : [
                 {
-                    "type": "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/shotwell.git/",
-                    "commit" : "382ac43b6b5fb688bf43a03601e48abd05925b89"
+                    "type": "archive",
+                    "url" : "https://download.gnome.org/sources/shotwell/0.30/shotwell-0.30.15.tar.xz",
+                    "sha256" : "3a52ad60b102da0df5f74db031c45d4ccf263513c954616ee1664bf4f4e9bdc9"
                 }
             ],
             "post-install" : [
