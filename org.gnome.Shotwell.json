@@ -8,6 +8,9 @@
     "rename-icon" : "shotwell",
     "rename-appdata-file" : "shotwell.appdata.xml",
     "finish-args": [
+        "--env=DCONF_USER_CONFIG_DIR=.config/dconf",
+        "--filesystem=~/.config/dconf:ro",
+        "--filesystem=xdg-run/dconf",
         "--filesystem=/media",
         "--filesystem=/run/media",
         "--filesystem=xdg-download",
