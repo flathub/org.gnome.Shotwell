@@ -52,11 +52,12 @@
         {
             "name": "libghoto2",
             "cleanup" : ["/bin", "/lib/udev", "/share/doc"],
+
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://github.com/gphoto/libgphoto2/releases/download/v2.5.29/libgphoto2-2.5.29.tar.xz",
-                    "sha256" : "4b439ec10af3ae4d7696d4a75655a1fe259dea5c1ccc692af58a0cc5024e7754"
+                    "url" : "https://sourceforge.net/projects/gphoto/files/libgphoto/2.5.30/libgphoto2-2.5.30.tar.bz2",
+                    "sha256" : "ee61a1dac6ad5cf711d114e06b90a6d431961a6e7ec59f4b757a7cd77b1c0fb4"
                 }
             ],
             "config-opts" : ["--disable-introspection", "--disable-docs"]
@@ -156,8 +157,8 @@
             "sources" : [
                 {
                     "type": "archive",
-                    "url" : "https://download.gnome.org/sources/shotwell/0.30/shotwell-0.30.16.tar.xz",
-                    "sha256" : "c9882cfbdad303cb8161b149acbb4c617fbe7ca9f6ab6e22d174e2447e7518fa"
+                    "url" : "https://download.gnome.org/sources/shotwell/0.30/shotwell-0.30.17.tar.xz",
+                    "sha256" : "b65a57dd0a1fc4f9ec70d4658f09320840b8aaa9f6e910c5b3fe960f5ec9cfc4"
                 }
             ],
             "post-install" : [
