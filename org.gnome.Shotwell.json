@@ -1,7 +1,7 @@
 {
     "app-id": "org.gnome.Shotwell",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "42",
+    "runtime-version": "44",
     "sdk": "org.gnome.Sdk",
     "command" : "shotwell",
     "rename-desktop-file" : "shotwell.desktop",
@@ -80,19 +80,6 @@
             ]
         },
         {
-            "name": "libgdata",
-            "buildsystem" : "meson",
-            "cleanup": ["/share/gtk-doc"],
-            "config-opts": [ "-Dintrospection=false", "-Dalways_build_tests=false", "-Dgoa=disabled", "-Dgtk_doc=false"],
-                "sources": [
-                    {
-                        "type": "archive",
-                        "url": "https://download.gnome.org/sources/libgdata/0.18/libgdata-0.18.1.tar.xz",
-                        "sha256": "dd8592eeb6512ad0a8cf5c8be8c72e76f74bfe6b23e4dd93f0756ee0716804c7"
-                    }
-                ]
-        },
-        {
             "name": "exiv2",
             "cleanup": [ "/bin" ],
             "buildsystem": "cmake-ninja",
@@ -113,7 +100,9 @@
             "name": "gexiv2",
             "buildsystem" : "meson",
             "cleanup" : ["/lib/girepository-1.0", "/share/gir-1.0"],
-            "config-opts" : ["-Dpython2_girdir=no", "-Dpython3_girdir=no"],
+            "config-opts" : [
+                "-Dpython3_girdir=no"
+            ],
             "build-options" : {
                 "env": {
                     "PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_GIRDIR": "/app/share/gir-1.0",
@@ -151,19 +140,45 @@
             ]
         },
         {
+            "name": "libportal",
+            "buildsystem": "meson",
+            "config-opts": [
+                "-Dbackends=gtk3",
+                "-Dintrospection=true",
+                "-Ddocs=false"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/flatpak/libportal/releases/download/0.6/libportal-0.6.tar.xz",
+                    "sha256": "88a12c3ba71bc31acff7238c280de697d609cebc50830c3766776ec35abc6566",
+                    "x-checker-data": {
+                        "type": "json",
+                        "url": "https://api.github.com/repos/flatpak/libportal/releases/latest",
+                        "version-query": ".tag_name",
+                        "url-query": ".assets[] | select(.name==\"libportal-\" + $version + \".tar.xz\") | .browser_download_url"
+                    }
+                }
+            ]
+        },
+        {
             "name": "shotwell",
             "buildsystem": "meson",
-            "config-opts" : ["-Dudev=false", "-Dinstall-apport-hook=false", "-Dface-detection=false", "-Dfatal_warnings=false"],
+            "config-opts" : [
+                "-Dudev=false",
+                "-Dinstall_apport_hook=false",
+                "-Dfatal_warnings=false"
+            ],
             "sources" : [
                 {
                     "type": "archive",
-                    "url" : "https://download.gnome.org/sources/shotwell/0.30/shotwell-0.30.17.tar.xz",
-                    "sha256" : "b65a57dd0a1fc4f9ec70d4658f09320840b8aaa9f6e910c5b3fe960f5ec9cfc4"
+                    "url" : "https://download.gnome.org/sources/shotwell/0.31/shotwell-0.31.7.tar.xz",
+                    "sha256" : "80f0a3d87552f8bdefa5e36283bed767d00576da8cc96a44a3d34a4235c499e0"
                 }
             ],
             "post-install" : [
                 "mv /app/share/applications/shotwell-viewer.desktop /app/share/applications/org.gnome.Shotwell.Viewer.desktop",
-                "sed --in-place -e '/^Icon=/c Icon=org.gnome.Shotwell' /app/share/applications/org.gnome.Shotwell.Viewer.desktop"
+                "desktop-file-edit --set-icom=${FLATPAK_ID} /app/share/applications/org.gnome.Shotwell.Viewer.desktop"
             ]
         }
     ]
