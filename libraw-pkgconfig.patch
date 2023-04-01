@@ -1,6 +1,7 @@
---- LibRaw-0.20-Beta1/libraw.pc.in~	2020-05-13 14:22:12.656424311 +0200
-+++ LibRaw-0.20-Beta1/libraw.pc.in	2020-05-13 14:22:27.481441569 +0200
-@@ -5,7 +5,8 @@
+diff -r -u foo/libraw.pc.in libraw-7/libraw.pc.in
+--- foo/libraw.pc.in	2023-04-01 14:26:50.358780145 +0200
++++ libraw-7/libraw.pc.in	2023-01-05 07:49:26.000000000 +0100
+@@ -5,8 +5,8 @@
  
  Name: libraw
  Description: Raw image decoder library (non-thread-safe)
@@ -8,12 +9,14 @@
 +Requires.private: @PACKAGE_REQUIRES@
  Version: @PACKAGE_VERSION@
 -Libs: -L${libdir} -lraw -lstdc++@PC_OPENMP@
+-Libs.private: @PACKAGE_LIBS_PRIVATE@
 +Libs: -L${libdir} -lraw@PC_OPENMP@
-+Libs.private: -lstdc++
++Libs.private: @PACKAGE_LIBS_PRIVATE@ -lstdc++
  Cflags: -I${includedir}/libraw -I${includedir}
---- LibRaw-0.20-Beta1/libraw_r.pc.in~	2020-05-13 14:22:18.034430572 +0200
-+++ LibRaw-0.20-Beta1/libraw_r.pc.in	2020-05-13 14:22:27.481441569 +0200
-@@ -5,7 +5,8 @@
+diff -r -u foo/libraw_r.pc.in libraw-7/libraw_r.pc.in
+--- foo/libraw_r.pc.in	2023-04-01 14:26:50.358780145 +0200
++++ libraw-7/libraw_r.pc.in	2023-01-05 07:49:26.000000000 +0100
+@@ -5,8 +5,8 @@
  
  Name: libraw
  Description: Raw image decoder library (thread-safe)
@@ -21,6 +24,7 @@
 +Requires.private: @PACKAGE_REQUIRES@
  Version: @PACKAGE_VERSION@
 -Libs: -L${libdir} -lraw_r -lstdc++@PC_OPENMP@
+-Libs.private: @PACKAGE_LIBS_PRIVATE@
 +Libs: -L${libdir} -lraw_r@PC_OPENMP@
-+Libs.private: -lstdc++
++Libs.private: @PACKAGE_LIBS_PRIVATE@ -lstdc++
  Cflags: -I${includedir}/libraw -I${includedir}
