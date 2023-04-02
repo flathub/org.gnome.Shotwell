@@ -113,7 +113,7 @@
             "name": "gexiv2",
             "buildsystem" : "meson",
             "cleanup" : ["/lib/girepository-1.0", "/share/gir-1.0"],
-            "config-opts" : ["-Dpython2_girdir=no", "-Dpython3_girdir=no"],
+            "config-opts" : ["-Dpython3_girdir=no"],
             "build-options" : {
                 "env": {
                     "PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_GIRDIR": "/app/share/gir-1.0",
@@ -135,8 +135,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url" : "https://www.libraw.org/data/LibRaw-0.20.2.tar.gz",
-                    "sha256" : "dc1b486c2003435733043e4e05273477326e51c3ea554c6864a4eafaff1004a6"
+                    "url" : "https://www.libraw.org/data/LibRaw-0.21.1.tar.gz",
+                    "sha256" : "630a6bcf5e65d1b1b40cdb8608bdb922316759bfb981c65091fec8682d1543cd"
                 },
                 {
                     "type": "patch",
@@ -151,14 +151,38 @@
             ]
         },
         {
+            "name": "libportal",
+            "buildsystem": "meson",
+            "builddir": true,
+            "config-opts": [
+                "--libdir=/app/lib",
+                "--buildtype=debugoptimized",
+                "-Dbackends=gtk3",
+                "-Ddocs=false",
+                "-Dtests=false"
+            ],
+            "sources" : [
+                {
+                    "type": "git",
+                    "url": "https://github.com/flatpak/libportal.git",
+                    "branch": "main",
+                    "commit": "f84a5606f15dfff6771a12d2ce75699d2c7a3d8f"
+                }
+            ]
+        },
+        {
             "name": "shotwell",
             "buildsystem": "meson",
             "config-opts" : ["-Dudev=false", "-Dinstall-apport-hook=false", "-Dface-detection=false", "-Dfatal_warnings=false"],
             "sources" : [
                 {
                     "type": "archive",
-                    "url" : "https://download.gnome.org/sources/shotwell/0.30/shotwell-0.30.17.tar.xz",
-                    "sha256" : "b65a57dd0a1fc4f9ec70d4658f09320840b8aaa9f6e910c5b3fe960f5ec9cfc4"
+                    "url" : "https://download.gnome.org/sources/shotwell/0.30/shotwell-0.30.18.tar.xz",
+                    "sha256" : "a8c04a3c5cee0506fa103dde58ced15f03c6478f59958419d2a5f80761f14135"
+                },
+                {
+                    "type" : "patch",
+                    "path" : "0001-gphoto2-Add-missing-cheader-attributes-of-delegate-s.patch"
                 }
             ],
             "post-install" : [
