@@ -228,6 +228,10 @@
                 {
                     "type" : "patch",
                     "path" : "0001-data-Add-releases-to-appdata.patch"
+                },
+                {
+                    "type" : "patch",
+                    "path" : "0001-Fix-display-of-non-git-version-in-about-dialog.patch"
                 }
             ]
         }
