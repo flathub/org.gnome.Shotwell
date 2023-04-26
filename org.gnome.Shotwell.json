@@ -57,6 +57,10 @@
                 "-DCMAKE_INSTALL_LIBDIR=lib",
                 "-DBUILD_LIST=imgproc,imgcodecs,objdetect,dnn"
             ],
+            "build-options" : {
+                "cxxflags" : "-Wp,-U_GLIBCXX_ASSERTIONS",
+                "cflags" : "-Wp,-U_GLIBCXX_ASSERTIONS"
+            },
             "sources" : [
                 {
                     "type" : "git",
