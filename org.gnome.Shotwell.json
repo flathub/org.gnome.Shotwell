@@ -33,44 +33,6 @@
     ],
     "modules" : [
         {
-            "name" : "opencv",
-            "buildsystem" : "cmake-ninja",
-            "builddir" : true,
-            "cleanup" : [
-                "/share/OpenCV/*.cmake",
-                "/share/OpenCV/*.supp"
-            ],
-            "config-opts" : [
-                "-DCMAKE_BUILD_TYPE=Release",
-                "-DOPENCV_GENERATE_PKGCONFIG=ON",
-                "-DBUILD_TESTS=OFF",
-                "-DBUILD_EXAMPLES=OFF",
-                "-DBUILD_PERF_TESTS=OFF",
-                "-DWITH_FFMPEG=OFF",
-                "-DWITH_GTK=OFF",
-                "-DWITH_GSTREAMER=OFF",
-                "-DWITH_JASPER=OFF",
-                "-DWITH_OPENEXR=OFF",
-                "-DWITH_GDAL=OFF",
-                "-DWITH_GDCM=OFF",
-                "-DBUILD_opencv_apps=OFF",
-                "-DCMAKE_INSTALL_LIBDIR=lib",
-                "-DBUILD_LIST=imgproc,imgcodecs,objdetect,dnn"
-            ],
-            "build-options" : {
-                "cxxflags" : "-Wp,-U_GLIBCXX_ASSERTIONS",
-                "cflags" : "-Wp,-U_GLIBCXX_ASSERTIONS"
-            },
-            "sources" : [
-                {
-                    "type" : "git",
-                    "tag" : "4.7.0",
-                    "commit" : "725e440d278aca07d35a5e8963ef990572b07316",
-                    "url" : "https://github.com/opencv/opencv"
-                }
-            ]
-        },
-        {
             "name": "libusb",
             "sources" : [
                 {
@@ -222,7 +184,7 @@
         {
             "name": "shotwell",
             "buildsystem": "meson",
-            "config-opts" : ["-Dudev=false", "-Dinstall_apport_hook=false", "-Dfatal_warnings=false", "-Dface_detection_helper_bus=private", "-Dface_detection=true", "-Dextra_pixbuf_loaders_path=/app/lib/gdk-pixbuf-2.0/2.10.0" ],
+            "config-opts" : ["-Dudev=false", "-Dinstall_apport_hook=false", "-Dfatal_warnings=false", "-Dface_detection_helper_bus=private", "-Dface_detection=false", "-Dextra_pixbuf_loaders_path=/app/lib/gdk-pixbuf-2.0/2.10.0" ],
             "sources" : [
                 {
                     "type": "archive",
