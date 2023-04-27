@@ -198,6 +198,14 @@
                 {
                     "type" : "patch",
                     "path" : "0001-Fix-display-of-non-git-version-in-about-dialog.patch"
+                },
+                {
+                    "type" : "patch",
+                    "path" : "0001-data-Add-back-missing-plugin-key.patch"
+                },
+                {
+                    "type" : "patch",
+                    "path" : "0002-Align-settings-scheme-with-code.patch"
                 }
             ]
         }
