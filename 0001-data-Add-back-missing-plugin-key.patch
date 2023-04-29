@@ -1,0 +1,32 @@
+From d71ff2532063e52361d9be9b590652ccaffb77dc Mon Sep 17 00:00:00 2001
+From: Jens Georg <mail@jensge.org>
+Date: Thu, 27 Apr 2023 11:16:30 +0200
+Subject: [PATCH 1/2] data: Add back missing plugin key
+
+Key was incompletely renamed, can cause issues when upgrading from 0.30
+
+Fixes #5040
+---
+ data/gsettings/org.gnome.shotwell.gschema.xml | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/data/gsettings/org.gnome.shotwell.gschema.xml b/data/gsettings/org.gnome.shotwell.gschema.xml
+index f13022bc..a978b748 100644
+--- a/data/gsettings/org.gnome.shotwell.gschema.xml
++++ b/data/gsettings/org.gnome.shotwell.gschema.xml
+@@ -697,6 +697,12 @@
+         <description>True if the Google Photos publishing plugin is enabled, false otherwise</description>
+     </key>
+ 
++    <key name="org-gnome-shotwell-publishing-google-photos" type="b">
++        <default>true</default>
++        <summary>enable Google Photos publishing plugin</summary>
++        <description>True if the Google Photos publishing plugin is enabled, false otherwise</description>
++    </key>
++
+     <key name="publishing-youtube" type="b">
+         <default>true</default>
+         <summary>enable youtube publishing plugin</summary>
+-- 
+2.40.0
+

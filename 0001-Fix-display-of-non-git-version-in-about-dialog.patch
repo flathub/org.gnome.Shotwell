@@ -1,0 +1,25 @@
+From dc18df9a5c6ad250febd846cf536c9d140268451 Mon Sep 17 00:00:00 2001
+From: Jens Georg <mail@jensge.org>
+Date: Sat, 22 Apr 2023 23:29:29 +0200
+Subject: [PATCH] Fix display of non-git version in about dialog
+
+---
+ src/AppWindow.vala | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/AppWindow.vala b/src/AppWindow.vala
+index a1b5bbb2..438806cc 100644
+--- a/src/AppWindow.vala
++++ b/src/AppWindow.vala
+@@ -572,7 +572,7 @@ public abstract class AppWindow : PageWindow {
+ 
+     protected void on_about() {
+         var hash = "";
+-        if (Resources.GIT_VERSION != "") {
++        if (Resources.GIT_VERSION != null && Resources.GIT_VERSION != "" && Resources.GIT_VERSION != Resources.APP_VERSION) {
+             hash = " (%s)".printf(Resources.GIT_VERSION.substring(0,7));
+         }
+         string[] artists = {"Image of the Delmenhorst Town Hall by Charlie1965nrw, source: https://commons.wikimedia.org/wiki/File:Delmenhorst_Rathaus.jpg", null};
+-- 
+2.40.0
+
