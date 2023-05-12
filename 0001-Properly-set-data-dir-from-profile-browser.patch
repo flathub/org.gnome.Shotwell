@@ -1,0 +1,58 @@
+From decd505c29bb81b3e89baf523948d0a07a19f48f Mon Sep 17 00:00:00 2001
+From: Jens Georg <mail@jensge.org>
+Date: Thu, 11 May 2023 19:52:28 +0200
+Subject: [PATCH 1/2] Properly set data dir from profile browser
+
+Fixes #5049
+---
+ src/ProfileBrowser.vala | 8 ++------
+ src/main.vala           | 7 ++++++-
+ 2 files changed, 8 insertions(+), 7 deletions(-)
+
+diff --git a/src/ProfileBrowser.vala b/src/ProfileBrowser.vala
+index 4532a20e..e67a68d2 100644
+--- a/src/ProfileBrowser.vala
++++ b/src/ProfileBrowser.vala
+@@ -231,7 +231,7 @@ namespace Shotwell {
+             Object(orientation: Gtk.Orientation.VERTICAL, vexpand: true, hexpand: true);
+         }
+ 
+-        public signal void profile_activated(string? profile);
++        public signal void profile_activated(Profile profile);
+ 
+         public override void constructed() {
+             var scrollable = new Gtk.ScrolledWindow(null, null);
+@@ -243,11 +243,7 @@ namespace Shotwell {
+             list_box.row_activated.connect((list_box, row) => {
+                 var index = row.get_index();
+                 var profile = (Profile) ProfileManager.get_instance().get_item(index);
+-                if (profile.id == Profile.SYSTEM) {
+-                    profile_activated(null);
+-                } else {
+-                    profile_activated(profile.name);
+-                }
++                profile_activated(profile);
+             });
+             list_box.get_style_context().add_class("rich-list");
+             list_box.hexpand = true;
+diff --git a/src/main.vala b/src/main.vala
+index cdc9b27f..32e3d83d 100644
+--- a/src/main.vala
++++ b/src/main.vala
+@@ -410,7 +410,12 @@ void main(string[] args) {
+         window.set_title (_("Choose Shotwell's profile"));
+         var browser = new Shotwell.ProfileBrowser();
+         browser.profile_activated.connect((profile) => {
+-            CommandlineOptions.profile = profile;
++            if (profile.id != Shotwell.Profile.SYSTEM) {
++                CommandlineOptions.profile = profile.name;
++                CommandlineOptions.data_dir = profile.data_dir;
++            } else {
++                CommandlineOptions.profile = null;
++            }
+             window.response(Gtk.ResponseType.OK);
+         });
+         window.get_content_area().add(browser);
+-- 
+2.40.1
+

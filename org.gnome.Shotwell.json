@@ -188,24 +188,16 @@
             "sources" : [
                 {
                     "type": "archive",
-                    "url" : "https://download.gnome.org/sources/shotwell/0.32/shotwell-0.32.0.tar.xz",
-                    "sha256" : "1772b2fa1e7a5479d528028bc9a303f2855e1d959a5b3c917922e63a98a90b19"
+                    "url" : "https://download.gnome.org/sources/shotwell/0.32/shotwell-0.32.1.tar.xz",
+                    "sha256" : "4ac4517416ad8aa23b44e75c34bd6e16bab7363fa20991bb09bacdfab3f763ce"
                 },
                 {
                     "type" : "patch",
-                    "path" : "0001-data-Add-releases-to-appdata.patch"
+                    "path" : "0001-Properly-set-data-dir-from-profile-browser.patch"
                 },
                 {
                     "type" : "patch",
-                    "path" : "0001-Fix-display-of-non-git-version-in-about-dialog.patch"
-                },
-                {
-                    "type" : "patch",
-                    "path" : "0001-data-Add-back-missing-plugin-key.patch"
-                },
-                {
-                    "type" : "patch",
-                    "path" : "0002-Align-settings-scheme-with-code.patch"
+                    "path" : "0002-Use-other-tmp-dir-when-in-flatpak.patch"
                 }
             ]
         }
