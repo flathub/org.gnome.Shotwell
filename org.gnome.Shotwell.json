@@ -56,6 +56,17 @@
             ],
             "config-opts" : ["--disable-introspection", "--disable-docs"]
         },
+        {   
+            "name" : "inih",
+            "buildsystem" : "meson",
+            "sources" : [
+                {
+                    "type": "git",
+                    "url" : "https://github.com/benhoyt/inih",
+                    "commit" : "9cecf0643da0846e77f64d10a126d9f48b9e05e8"
+                }
+            ]
+        },
         {
             "name": "exiv2",
             "cleanup": [ "/bin" ],
@@ -70,7 +81,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/Exiv2/exiv2/",
-                    "commit" : "d6ea2a84033c3c544c422df8f83461df6de536df"
+                    "commit" : "931a40a746f5678dcc4625b06a2eb25fa4f00b34"
                 }
             ]
         },
@@ -78,7 +89,7 @@
             "name": "gexiv2",
             "buildsystem" : "meson",
             "cleanup" : ["/lib/girepository-1.0", "/share/gir-1.0"],
-            "config-opts" : ["-Dpython3_girdir=no"],
+            "config-opts" : ["-Dpython3=false", "-Dtools=false"],
             "build-options" : {
                 "env": {
                     "PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_GIRDIR": "/app/share/gir-1.0",
@@ -88,8 +99,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/gexiv2/0.14/gexiv2-0.14.0.tar.xz",
-                    "sha256" : "e58279a6ff20b6f64fa499615da5e9b57cf65ba7850b72fafdf17221a9d6d69e"
+                    "url": "https://download.gnome.org/sources/gexiv2/0.14/gexiv2-0.14.2.tar.xz",
+                    "sha256" : "2a0c9cf48fbe8b3435008866ffd40b8eddb0667d2212b42396fdf688e93ce0be"
                 }
             ]
         },
