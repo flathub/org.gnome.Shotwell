@@ -159,8 +159,8 @@
             "sources" : [
                 {
                     "type": "archive",
-                    "url" : "https://github.com/strukturag/libde265/releases/download/v1.0.11/libde265-1.0.11.tar.gz",
-                    "sha256" : "2f8f12cabbdb15e53532b7c1eb964d4e15d444db1be802505e6ac97a25035bab"
+                    "url" : "https://github.com/strukturag/libde265/releases/download/v1.0.12/libde265-1.0.12.tar.gz",
+                    "sha256" : "62185ea2182e68cf68bba20cc6eb4c287407b509cf0a827d7ddb75614db77b5c"
                 }
             ]
         },
@@ -182,8 +182,8 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://github.com/strukturag/libheif/releases/download/v1.15.2/libheif-1.15.2.tar.gz",
-                    "sha256" : "7a4c6077f45180926583e2087571371bdd9cb21b6e6fada85a6fbd544f26a0e2"
+                    "url" : "https://github.com/strukturag/libheif/releases/download/v1.16.2/libheif-1.16.2.tar.gz",
+                    "sha256" : "7f97e4205c0bd9f9b8560536c8bd2e841d1c9a6d610401eb3eb87ed9cdfe78ea"
                 }
             ],
             "post-install" :  [
