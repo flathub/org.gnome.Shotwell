@@ -1,0 +1,42 @@
+From 692ab5ecdfe51d24140a9b13323938f5a12a2919 Mon Sep 17 00:00:00 2001
+From: Jens Georg <mail@jensge.org>
+Date: Tue, 1 Aug 2023 14:53:41 +0200
+Subject: [PATCH 2/2] data: Fix findings from appstream validate
+
+---
+ data/org.gnome.Shotwell.appdata.xml.in | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/data/org.gnome.Shotwell.appdata.xml.in b/data/org.gnome.Shotwell.appdata.xml.in
+index c2a14f58..9c331705 100644
+--- a/data/org.gnome.Shotwell.appdata.xml.in
++++ b/data/org.gnome.Shotwell.appdata.xml.in
+@@ -2,6 +2,7 @@
+ <!-- Copyright 2016 Software Freedom Conservancy Inc. -->
+ <component type="desktop">
+   <id>org.gnome.Shotwell.desktop</id>
++  <launchable type="desktop-id">org.gnome.Shotwell.desktop</launchable>
+   <metadata_license>CC0-1.0</metadata_license>
+   <project_license>LGPL-2.1+</project_license>
+   <translation type="gettext">shotwell</translation>
+@@ -48,7 +49,6 @@
+     </screenshot>
+   </screenshots>
+   <update_contact>mail@jensge.org</update_contact>
+-  <project_group>GNOME</project_group>
+ 
+   <developer_name>The Shotwell developers</developer_name>
+ 
+@@ -73,7 +73,7 @@
+   </releases>
+ 
+   <!--GNOME Projects usually have no per-app donation page-->
+-  <url type="donation">http://www.gnome.org/friends/</url>
++  <url type="donation">https://www.gnome.org/friends/</url>
+ 
+-  <url type="help">http://shotwell-project.org/doc/html</url>
++  <url type="help">https://shotwell-project.org/doc/html</url>
+ </component>
+-- 
+2.41.0
+
