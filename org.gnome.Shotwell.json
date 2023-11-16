@@ -50,8 +50,8 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://sourceforge.net/projects/gphoto/files/libgphoto/2.5.30/libgphoto2-2.5.30.tar.bz2",
-                    "sha256" : "ee61a1dac6ad5cf711d114e06b90a6d431961a6e7ec59f4b757a7cd77b1c0fb4"
+                    "url" : "https://sourceforge.net/projects/gphoto/files/libgphoto/2.5.31/libgphoto2-2.5.31.tar.xz",
+                    "sha256" : "8fc7bf40f979459509b87dd4ff1aae9b6c1c2b4724d37db576081eec15406ace"
                 }
             ],
             "config-opts" : ["--disable-introspection", "--disable-docs"]
@@ -79,9 +79,9 @@
             ],
             "sources": [
                 {
-                    "type": "git",
-                    "url": "https://github.com/Exiv2/exiv2/",
-                    "commit" : "931a40a746f5678dcc4625b06a2eb25fa4f00b34"
+                    "type": "archive",
+                    "url": "https://github.com/Exiv2/exiv2/archive/refs/tags/v0.28.1.tar.gz",
+                    "sha256" : "3078651f995cb6313b1041f07f4dd1bf0e9e4d394d6e2adc6e92ad0b621291fa"
                 }
             ]
         },
@@ -141,9 +141,9 @@
             ],
             "sources" : [
                 {
-                    "type": "git",
-                    "url": "https://github.com/flatpak/libportal.git",
-                    "commit": "f84a5606f15dfff6771a12d2ce75699d2c7a3d8f"
+                    "type": "archive",
+                    "url": "https://github.com/flatpak/libportal/releases/download/0.7.1/libportal-0.7.1.tar.xz",
+                    "sha256" : "297b90b263fad22190a26b8c7e8ea938fe6b18fb936265e588927179920d3805"
                 }
             ]
         },
@@ -182,8 +182,8 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://github.com/strukturag/libheif/releases/download/v1.16.2/libheif-1.16.2.tar.gz",
-                    "sha256" : "7f97e4205c0bd9f9b8560536c8bd2e841d1c9a6d610401eb3eb87ed9cdfe78ea"
+                    "url" : "https://github.com/strukturag/libheif/releases/download/v1.17.3/libheif-1.17.3.tar.gz",
+                    "sha256" : "8d5b6292e7931324f81f871f250ecbb9f874aa3c66b4f6f35ceb0bf3163b53ea"
                 }
             ],
             "post-install" :  [
