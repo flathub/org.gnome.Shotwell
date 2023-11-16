@@ -199,16 +199,8 @@
             "sources" : [
                 {
                     "type": "archive",
-                    "url" : "https://download.gnome.org/sources/shotwell/0.32/shotwell-0.32.2.tar.xz",
-                    "sha256" : "a5de53e873216df8f5996c96827bed963d6c6354e045e1796dfd326c6188c263"
-                },
-                {
-                    "type" : "patch",
-                    "path" : "0002-data-Fix-findings-from-appstream-validate.patch"
-                },
-                {
-                    "type" : "patch",
-                    "path" : "0001-data-Update-release-information.patch"
+                    "url" : "https://download.gnome.org/sources/shotwell/0.32/shotwell-0.32.3.tar.xz",
+                    "sha256" : "e000fee5b3f362c79114f0ecff8e22b34c9a2865b59e41a2da3e4dc5d2ca2c3c"
                 }
             ]
         }
