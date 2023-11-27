@@ -86,7 +86,8 @@
                     },
                     "type": "git",
                     "url": "https://github.com/benhoyt/inih",
-                    "commit": "9cecf0643da0846e77f64d10a126d9f48b9e05e8"
+                    "commit": "9cecf0643da0846e77f64d10a126d9f48b9e05e8",
+                    "tag": "r57"
                 }
             ]
         },
@@ -219,8 +220,8 @@
                         "url-template": "https://github.com/strukturag/libde265/releases/download/v$version/libde265-$version.tar.gz"
                     },
                     "type": "archive",
-                    "url": "https://github.com/strukturag/libde265/releases/download/v1.0.12/libde265-1.0.12.tar.gz",
-                    "sha256": "62185ea2182e68cf68bba20cc6eb4c287407b509cf0a827d7ddb75614db77b5c"
+                    "url": "https://github.com/strukturag/libde265/releases/download/v1.0.14/libde265-1.0.14.tar.gz",
+                    "sha256": "99f46ef77a438be639aa3c5d9632c0670541c5ed5d386524d4199da2d30df28f"
                 }
             ]
         },
