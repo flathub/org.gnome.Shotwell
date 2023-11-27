@@ -36,7 +36,12 @@
             "name": "libusb",
             "sources" : [
                 {
-                "type" : "archive",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 1749,
+                        "url-template": "https://github.com/libusb/libusb/archive/v$version.tar.gz"
+                    },
+                    "type" : "archive",
                     "url" : "https://github.com/libusb/libusb/archive/v1.0.26.tar.gz",
                     "sha256" : "a09bff99c74e03e582aa30759cada218ea8fa03580517e52d463c59c0b25e240"
                 }
@@ -49,6 +54,11 @@
 
             "sources" : [
                 {
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 12558,
+                        "url-template": "https://sourceforge.net/projects/gphoto/files/libgphoto/$version/libgphoto2-$version.tar.xz"
+                    },
                     "type" : "archive",
                     "url" : "https://sourceforge.net/projects/gphoto/files/libgphoto/2.5.31/libgphoto2-2.5.31.tar.xz",
                     "sha256" : "8fc7bf40f979459509b87dd4ff1aae9b6c1c2b4724d37db576081eec15406ace"
@@ -61,6 +71,11 @@
             "buildsystem" : "meson",
             "sources" : [
                 {
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 11600,
+                        "tag-template": "r$version"
+                    },
                     "type": "git",
                     "url" : "https://github.com/benhoyt/inih",
                     "commit" : "9cecf0643da0846e77f64d10a126d9f48b9e05e8"
@@ -79,6 +94,11 @@
             ],
             "sources": [
                 {
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 769,
+                        "url-template": "https://github.com/Exiv2/exiv2/archive/refs/tags/v$version.tar.gz"
+                    },
                     "type": "archive",
                     "url": "https://github.com/Exiv2/exiv2/archive/refs/tags/v0.28.1.tar.gz",
                     "sha256" : "3078651f995cb6313b1041f07f4dd1bf0e9e4d394d6e2adc6e92ad0b621291fa"
@@ -98,6 +118,10 @@
             },
             "sources": [
                 {
+                    "x-checker-data": {
+                        "type": "gnome",
+                        "name": "gexiv2"
+                    },
                     "type": "archive",
                     "url": "https://download.gnome.org/sources/gexiv2/0.14/gexiv2-0.14.2.tar.xz",
                     "sha256" : "2a0c9cf48fbe8b3435008866ffd40b8eddb0667d2212b42396fdf688e93ce0be"
@@ -110,6 +134,11 @@
             "cleanup": [ "/share/doc" ],
             "sources": [
                 {
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 1709,
+                        "url-template": "https://www.libraw.org/data/LibRaw-$version.tar.gz"
+                    },
                     "type": "archive",
                     "url" : "https://www.libraw.org/data/LibRaw-0.21.1.tar.gz",
                     "sha256" : "630a6bcf5e65d1b1b40cdb8608bdb922316759bfb981c65091fec8682d1543cd"
@@ -141,6 +170,11 @@
             ],
             "sources" : [
                 {
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 230124,
+                        "url-template": "https://github.com/flatpak/libportal/releases/download/$version/libportal-$version.tar.xz"
+                    },
                     "type": "archive",
                     "url": "https://github.com/flatpak/libportal/releases/download/0.7.1/libportal-0.7.1.tar.xz",
                     "sha256" : "297b90b263fad22190a26b8c7e8ea938fe6b18fb936265e588927179920d3805"
@@ -158,6 +192,11 @@
             ],
             "sources" : [
                 {
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 11239,
+                        "url-template": "https://github.com/strukturag/libde265/releases/download/v$version/libde265-$version.tar.gz"
+                    },
                     "type": "archive",
                     "url" : "https://github.com/strukturag/libde265/releases/download/v1.0.12/libde265-1.0.12.tar.gz",
                     "sha256" : "62185ea2182e68cf68bba20cc6eb4c287407b509cf0a827d7ddb75614db77b5c"
@@ -181,6 +220,11 @@
             ],
             "sources" : [
                 {
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 64439,
+                        "url-template": "https://github.com/strukturag/libheif/releases/download/v$version/libheif-$version.tar.gz"
+                    },
                     "type" : "archive",
                     "url" : "https://github.com/strukturag/libheif/releases/download/v1.17.3/libheif-1.17.3.tar.gz",
                     "sha256" : "8d5b6292e7931324f81f871f250ecbb9f874aa3c66b4f6f35ceb0bf3163b53ea"
@@ -198,6 +242,10 @@
             "config-opts" : ["-Dudev=false", "-Dinstall_apport_hook=false", "-Dfatal_warnings=false", "-Dface_detection_helper_bus=private", "-Dface_detection=false", "-Dextra_pixbuf_loaders_path=/app/lib/gdk-pixbuf-2.0/2.10.0" ],
             "sources" : [
                 {
+                    "x-checker-data": {
+                        "type": "gnome",
+                        "name": "shotwell"
+                    },
                     "type": "archive",
                     "url" : "https://download.gnome.org/sources/shotwell/0.32/shotwell-0.32.3.tar.xz",
                     "sha256" : "e000fee5b3f362c79114f0ecff8e22b34c9a2865b59e41a2da3e4dc5d2ca2c3c"
