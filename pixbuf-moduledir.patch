@@ -1,0 +1,14 @@
+diff --git a/plugins/gdk-pixbuf/CMakeLists.txt b/plugins/gdk-pixbuf/CMakeLists.txt
+index 16236aad..b3c5a348 100644
+--- a/plugins/gdk-pixbuf/CMakeLists.txt
++++ b/plugins/gdk-pixbuf/CMakeLists.txt
+@@ -25,7 +25,7 @@ set_target_properties(pixbufloader-jxl PROPERTIES
+ # shared library.
+ target_link_libraries(pixbufloader-jxl jxl jxl_threads skcms-interface PkgConfig::Gdk-Pixbuf)
+ 
+-execute_process(COMMAND ${PKG_CONFIG_EXECUTABLE} gdk-pixbuf-2.0 --variable gdk_pixbuf_moduledir --define-variable=prefix=${CMAKE_INSTALL_PREFIX} OUTPUT_VARIABLE GDK_PIXBUF_MODULEDIR OUTPUT_STRIP_TRAILING_WHITESPACE)
++execute_process(COMMAND ${PKG_CONFIG_EXECUTABLE} gdk-pixbuf-2.0 --variable gdk_pixbuf_moduledir --define-variable=libdir=${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR} OUTPUT_VARIABLE GDK_PIXBUF_MODULEDIR OUTPUT_STRIP_TRAILING_WHITESPACE)
+ install(TARGETS pixbufloader-jxl DESTINATION "${GDK_PIXBUF_MODULEDIR}")
+ 
+ # Instead of the following, we might instead add the
+
