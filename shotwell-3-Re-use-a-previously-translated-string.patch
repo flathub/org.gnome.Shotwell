@@ -1,0 +1,24 @@
+From d4f8690945d6ceeada13a4660a3a747f5710a25a Mon Sep 17 00:00:00 2001
+From: Jens Georg <mail@jensge.org>
+Date: Mon, 27 Nov 2023 11:39:46 +0100
+Subject: [PATCH 3/3] Re-use a previously translated string
+
+for the profile action of the desktop launcher
+---
+ data/org.gnome.Shotwell.desktop.in | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/data/org.gnome.Shotwell.desktop.in b/data/org.gnome.Shotwell.desktop.in
+index 3f195bc8..c7bb3af0 100644
+--- a/data/org.gnome.Shotwell.desktop.in
++++ b/data/org.gnome.Shotwell.desktop.in
+@@ -17,5 +17,5 @@ X-GNOME-FullName=Shotwell Photo Manager
+ Actions=profile-browser;
+ 
+ [Desktop Action profile-browser]
+-Name=Manage Different Profiles
++Name=Manage Different Profiles In Shotwell
+ Exec=shotwell -b
+-- 
+2.30.2
+

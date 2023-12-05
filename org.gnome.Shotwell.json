@@ -352,6 +352,14 @@
                     "type": "archive",
                     "url": "https://download.gnome.org/sources/shotwell/0.32/shotwell-0.32.3.tar.xz",
                     "sha256": "e000fee5b3f362c79114f0ecff8e22b34c9a2865b59e41a2da3e4dc5d2ca2c3c"
+                },
+                {
+                    "type": "patch",
+                    "paths": [
+                        "shotwell-1-Make-profile-browser-an-action-in-main-launcher.patch",
+                        "shotwell-2-Drop-translators-comment-in-desktop-files.patch",
+                        "shotwell-3-Re-use-a-previously-translated-string.patch"
+                    ]
                 }
             ]
         }

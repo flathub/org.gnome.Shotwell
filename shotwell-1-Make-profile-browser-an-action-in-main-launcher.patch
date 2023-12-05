@@ -1,0 +1,79 @@
+From ab7b5f32307ded4bffdab28d403ca7a23c8da3e4 Mon Sep 17 00:00:00 2001
+From: Will Thompson <will@willthompson.co.uk>
+Date: Sun, 26 Nov 2023 14:45:24 +0000
+Subject: [PATCH 1/3] Make profile browser an action in main launcher
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Previously a separate desktop file was installed for the profile
+browser, leading to two icons being shown in the app grid for Shotwell
+with the same icon and similar label, and resulting confusion for the
+large number of users who do not need the profile browser.
+
+Making the profile browser an action in the main desktop file is
+consistent with browsers like Firefox and Chrome. This keeps the action
+relatively accessible – right-click the icon – without cluttering the
+app grid.
+
+Fixes https://gitlab.gnome.org/GNOME/shotwell/-/issues/5085
+---
+ data/meson.build                                   |  7 -------
+ data/org.gnome.Shotwell-Profile-Browser.desktop.in | 14 --------------
+ data/org.gnome.Shotwell.desktop.in                 |  5 +++++
+ 3 files changed, 5 insertions(+), 21 deletions(-)
+ delete mode 100644 data/org.gnome.Shotwell-Profile-Browser.desktop.in
+
+diff --git a/data/meson.build b/data/meson.build
+index 798ea387..9c17f0ff 100644
+--- a/data/meson.build
++++ b/data/meson.build
+@@ -28,12 +28,5 @@ i18n.merge_file(input : 'org.gnome.Shotwell-Viewer.desktop.in',
+                 install : true,
+                 install_dir : join_paths(get_option('datadir'), 'applications'))
+ 
+-i18n.merge_file(input : 'org.gnome.Shotwell-Profile-Browser.desktop.in',
+-                output: 'org.gnome.Shotwell-Profile-Browser.desktop',
+-                po_dir : podir,
+-                type : 'desktop',
+-                install : true,
+-                install_dir : join_paths(get_option('datadir'), 'applications'))
+-
+ shotwell_resources = gnome.compile_resources('shotwell-resources',
+         'org.gnome.Shotwell.gresource.xml')
+diff --git a/data/org.gnome.Shotwell-Profile-Browser.desktop.in b/data/org.gnome.Shotwell-Profile-Browser.desktop.in
+deleted file mode 100644
+index 073f045b..00000000
+--- a/data/org.gnome.Shotwell-Profile-Browser.desktop.in
++++ /dev/null
+@@ -1,14 +0,0 @@
+-[Desktop Entry]
+-Version=1.0
+-Name=Shotwell Profile Browser
+-GenericName=Photo Manager
+-Comment=Manage Different Profiles In Shotwell
+-Exec=shotwell -b
+-# Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+-Icon=org.gnome.Shotwell
+-Terminal=false
+-Type=Application
+-Categories=Graphics;Photography;GNOME;GTK;
+-X-GIO-NoFuse=true
+-X-GNOME-Gettext-Domain=shotwell
+-X-GNOME-FullName=Shotwell Profile Manager
+diff --git a/data/org.gnome.Shotwell.desktop.in b/data/org.gnome.Shotwell.desktop.in
+index 61048f59..948d25cf 100644
+--- a/data/org.gnome.Shotwell.desktop.in
++++ b/data/org.gnome.Shotwell.desktop.in
+@@ -15,3 +15,8 @@ Categories=Graphics;Photography;GNOME;GTK;
+ X-GIO-NoFuse=true
+ X-GNOME-Gettext-Domain=shotwell
+ X-GNOME-FullName=Shotwell Photo Manager
++Actions=profile-browser;
++
++[Desktop Action profile-browser]
++Name=Manage Different Profiles
++Exec=shotwell -b
+-- 
+2.30.2
+

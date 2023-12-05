@@ -1,0 +1,37 @@
+From 756813319ae543f42df91df7a8bccec1236871f6 Mon Sep 17 00:00:00 2001
+From: Jens Georg <mail@jensge.org>
+Date: Mon, 27 Nov 2023 09:41:19 +0100
+Subject: [PATCH 2/3] Drop translators comment in desktop files
+
+---
+ data/org.gnome.Shotwell-Viewer.desktop.in | 1 -
+ data/org.gnome.Shotwell.desktop.in        | 1 -
+ 2 files changed, 2 deletions(-)
+
+diff --git a/data/org.gnome.Shotwell-Viewer.desktop.in b/data/org.gnome.Shotwell-Viewer.desktop.in
+index 4258dcbf..80294ad8 100644
+--- a/data/org.gnome.Shotwell-Viewer.desktop.in
++++ b/data/org.gnome.Shotwell-Viewer.desktop.in
+@@ -3,7 +3,6 @@ Version=1.0
+ Name=Shotwell Viewer
+ GenericName=Photo Viewer
+ Exec=shotwell %f
+-# Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+ Icon=org.gnome.Shotwell
+ Terminal=false
+ NoDisplay=true
+diff --git a/data/org.gnome.Shotwell.desktop.in b/data/org.gnome.Shotwell.desktop.in
+index 948d25cf..3f195bc8 100644
+--- a/data/org.gnome.Shotwell.desktop.in
++++ b/data/org.gnome.Shotwell.desktop.in
+@@ -6,7 +6,6 @@ Comment=Organize your photos
+ # Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+ Keywords=album;camera;cameras;crop;edit;enhance;export;gallery;image;images;import;organize;photo;photographs;photos;picture;pictures;photography;print;publish;rotate;share;tags;video;flickr;picasa;youtube;piwigo;
+ Exec=shotwell %U
+-# Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+ Icon=org.gnome.Shotwell
+ Terminal=false
+ Type=Application
+-- 
+2.30.2
+
