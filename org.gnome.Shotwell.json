@@ -251,18 +251,18 @@
                     "url": "https://github.com/strukturag/libheif/releases/download/v1.17.5/libheif-1.17.5.tar.gz",
                     "sha256": "38ab01938ef419dbebb98346dc0b1c8bb503a0449ea61a0e409a988786c2af5b"
                 },
-		{
-		    "type": "shell",
-		    "commands": [
-			"sed -i 's|DESTINATION ${GDKPIXBUF2_MODULE_DIR}|DESTINATION /app/lib/gdk-pixbuf-2.0/2.10.0/loaders|' gdk-pixbuf/CMakeLists.txt"
-		    ]
-		},
-		{
-		    "type": "shell",
-		    "commands": [
-			"sed -i 's|find_package(Doxygen)|set(DOXYGEN_FOUND OFF)|' CMakeLists.txt"
-		    ]
-		}
+                {
+                    "type": "shell",
+                    "commands": [
+                        "sed -i 's|DESTINATION ${GDKPIXBUF2_MODULE_DIR}|DESTINATION /app/lib/gdk-pixbuf-2.0/2.10.0/loaders|' gdk-pixbuf/CMakeLists.txt"
+                    ]
+                },
+                {
+                    "type": "shell",
+                    "commands": [
+                        "sed -i 's|find_package(Doxygen)|set(DOXYGEN_FOUND OFF)|' CMakeLists.txt"
+                    ]
+                }
             ]
         },
         {
@@ -295,10 +295,10 @@
                     "tag": "v0.8.2",
                     "commit": "954b460768c08a147abf47689ad69b0e7beff65e"
                 },
-		{
+                {
                     "type": "patch",
                     "path": "pixbuf-moduledir.patch"
-		}
+                }
             ],
             "modules": [
                 {
@@ -350,8 +350,8 @@
                         "name": "shotwell"
                     },
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/shotwell/0.32/shotwell-0.32.3.tar.xz",
-                    "sha256": "e000fee5b3f362c79114f0ecff8e22b34c9a2865b59e41a2da3e4dc5d2ca2c3c"
+                    "url": "https://download.gnome.org/sources/shotwell/0.32/shotwell-0.32.4.tar.xz",
+                    "sha256": "de2a9450846d1cec14c6a1030375fd49e1af24dc920ad6480344124f9ccb856f"
                 }
             ]
         }
