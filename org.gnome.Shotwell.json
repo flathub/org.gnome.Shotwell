@@ -22,6 +22,7 @@
     ],
     "cleanup": [
         "/include",
+        "/lib/cmake",
         "/lib/pkgconfig",
         "/share/pkgconfig",
         "/share/gtk-doc",
