@@ -32,6 +32,14 @@
         "*.la",
         "*.a"
     ],
+    "add-extensions": {
+        "org.gnome.Shotwell.HEIC": {
+            "directory": "lib/libheif",
+            "add-ld-path": "lib",
+            "bundle": true,
+            "autodelete": true
+        }
+    },
     "modules": [
         {
             "name": "libusb",
@@ -208,10 +216,15 @@
             "name": "de256",
             "buildsystem": "cmake-ninja",
             "config-opts": [
-                "-DCMAKE_INSTALL_LIBDIR=lib",
+                "-DCMAKE_INSTALL_PREFIX=/app/lib/libheif",
                 "-DCMAKE_BUILD_TYPE=Release",
                 "-DENABLE_DECODER=Off",
                 "-DENABLE_ENCODER=OfF"
+            ],
+            "cleanup": [
+                "/lib/libheif/include",
+                "/lib/libheif/lib/cmake",
+                "/lib/libheif/lib/pkgconfig"
             ],
             "sources": [
                 {
@@ -232,7 +245,7 @@
             "config-opts": [
                 "-DCMAKE_INSTALL_LIBDIR=lib",
                 "-DCMAKE_BUILD_TYPE=Release",
-                "-DWITH_LIBDE265=On",
+                "-DWITH_LIBDE265_PLUGIN=On",
                 "-DWITH_DAV1D=Off",
                 "-DWITH_AOM_ENCODER=Off",
                 "-DWITH_AOM_DECODER=Off",
@@ -241,6 +254,9 @@
                 "-DENABLE_PLUGIN_LOADING=On",
                 "-DWITH_EXAMPLES=Off"
             ],
+            "build-options": {
+                "append-pkg-config-path": "/app/lib/libheif/lib/pkgconfig"
+            },
             "sources": [
                 {
                     "x-checker-data": {
