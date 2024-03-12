@@ -22,7 +22,7 @@
     ],
     "cleanup": [
         "/include",
-        "/lib/pkconfig",
+        "/lib/pkgconfig",
         "/share/pkgconfig",
         "/share/gtk-doc",
         "/share/man",
