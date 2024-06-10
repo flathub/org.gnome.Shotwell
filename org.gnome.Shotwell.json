@@ -1,7 +1,7 @@
 {
     "app-id": "org.gnome.Shotwell",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "45",
+    "runtime-version": "46",
     "sdk": "org.gnome.Sdk",
     "command": "shotwell",
     "finish-args": [
@@ -278,61 +278,6 @@
                     "type": "shell",
                     "commands": [
                         "sed -i 's|find_package(Doxygen)|set(DOXYGEN_FOUND OFF)|' CMakeLists.txt"
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "jpeg-xl",
-            "buildsystem": "cmake-ninja",
-            "config-opts": [
-                "-DCMAKE_BUILD_STATIC_LIBS=OFF",
-                "-DJPEGXL_FORCE_SYSTEM_BROTLI=ON",
-                "-DJPEGXL_FORCE_SYSTEM_LCMS2=ON",
-                "-DJPEGXL_FORCE_SYSTEM_HWY=ON",
-                "-DJPEGXL_ENABLE_PLUGINS=ON",
-                "-DJPEGXL_ENABLE_TOOLS=OFF",
-                "-DJPEGXL_ENABLE_EXAMPLES=OFF",
-                "-DJPEGXL_ENABLE_MANPAGES=OFF",
-                "-DJPEGXL_ENABLE_FUZZERS=OFF",
-                "-DBUILD_TESTING=OFF"
-            ],
-            "post-install": [
-                "rm $FLATPAK_DEST/lib/*.a"
-            ],
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://github.com/libjxl/libjxl.git",
-                    "tag": "v0.8.2",
-                    "commit": "954b460768c08a147abf47689ad69b0e7beff65e"
-                },
-                {
-                    "type": "patch",
-                    "path": "pixbuf-moduledir.patch"
-                }
-            ],
-            "modules": [
-                {
-                    "name": "hwy",
-                    "buildsystem": "cmake-ninja",
-                    "config-opts": [
-                        "-DBUILD_SHARED_LIBS=ON",
-                        "-DHWY_ENABLE_TESTS=OFF",
-                        "-DHWY_ENABLE_EXAMPLES=OFF",
-                        "-DHWY_ENABLE_CONTRIB=OFF"
-                    ],
-                    "sources": [
-                        {
-                            "x-checker-data": {
-                                "type": "anitya",
-                                "project-id": 205809,
-                                "url-template": "https://github.com/google/highway/archive/refs/tags/$version.tar.gz"
-                            },
-                            "type": "archive",
-                            "url": "https://github.com/google/highway/archive/refs/tags/1.2.0.tar.gz",
-                            "sha256": "7e0be78b8318e8bdbf6fa545d2ecb4c90f947df03f7aadc42c1967f019e63343"
-                        }
                     ]
                 }
             ]
