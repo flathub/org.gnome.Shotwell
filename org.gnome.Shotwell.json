@@ -283,6 +283,36 @@
             ]
         },
         {
+            "name": "gdk-pixbuf",
+            "cleanup" : [
+                "/bin/*"
+            ],
+            "post-install": [
+                "rm /app/lib/libgdk_pixbuf-2.0.so*",
+                "rm /app/lib/pkgconfig/gdk-pixbuf-2.0.pc",
+                "rm /app/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache"
+            ],
+            "buildsystem": "meson",
+            "config-opts": [
+                "-Dgtk_doc=false",
+                "-Dman=false",
+                "-Dothers=enabled",
+                "-Dtests=false",
+                "-Dinstalled_tests=false"
+            ],
+            "sources": [
+                {
+                    "x-checker-data": {
+                        "type": "gnome",
+                        "name": "gdk-pixbuf"
+                    },
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/gdk-pixbuf/2.42/gdk-pixbuf-2.42.12.tar.xz",
+                    "sha256": "b9505b3445b9a7e48ced34760c3bcb73e966df3ac94c95a148cb669ab748e3c7"
+                }
+            ]
+        },
+        {
             "name": "update-pixbuf-loaders",
             "buildsystem": "simple",
             "build-commands": [
