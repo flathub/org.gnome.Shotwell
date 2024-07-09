@@ -122,10 +122,6 @@
                     "type": "archive",
                     "url": "https://github.com/Exiv2/exiv2/archive/refs/tags/v0.28.3.tar.gz",
                     "sha256": "1315e17d454bf4da3cc0edb857b1d2c143670f3485b537d0f946d9ed31d87b70"
-                },
-                {
-                    "type": "patch",
-                    "path": "exiv2-fix-time-parsing.patch"
                 }
             ]
         },
