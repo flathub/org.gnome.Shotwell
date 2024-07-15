@@ -265,8 +265,8 @@
                         "url-template": "https://github.com/strukturag/libheif/releases/download/v$version/libheif-$version.tar.gz"
                     },
                     "type": "archive",
-                    "url": "https://github.com/strukturag/libheif/releases/download/v1.17.6/libheif-1.17.6.tar.gz",
-                    "sha256": "8390baf4913eda0a183e132cec62b875fb2ef507ced5ddddc98dfd2f17780aee"
+                    "url": "https://github.com/strukturag/libheif/releases/download/v1.18.0/libheif-1.18.0.tar.gz",
+                    "sha256": "3f25f516d84401d7c22a24ef313ae478781b95f235c250b06152701c401055c3"
                 },
                 {
                     "type": "shell",
@@ -284,7 +284,7 @@
         },
         {
             "name": "gdk-pixbuf",
-            "cleanup" : [
+            "cleanup": [
                 "/bin/*"
             ],
             "post-install": [
