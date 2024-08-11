@@ -337,8 +337,8 @@
                         "name": "shotwell"
                     },
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/shotwell/0.32/shotwell-0.32.7.tar.xz",
-                    "sha256": "12f325e019c3e638c2b961571bc204776761e8261467ef1bb68755889335d5f7"
+                    "url": "https://download.gnome.org/sources/shotwell/0.32/shotwell-0.32.8.tar.xz",
+                    "sha256": "47063c0179e5d80f534373dc560e1ce8077aadd584eeef06c523a460e2f929c3"
                 }
             ]
         }
