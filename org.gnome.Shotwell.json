@@ -245,10 +245,13 @@
             "config-opts": [
                 "-DCMAKE_INSTALL_LIBDIR=lib",
                 "-DCMAKE_BUILD_TYPE=Release",
+		"-DCMAKE_COMPILE_WARNING_AS_ERROR=OFF",
                 "-DWITH_LIBDE265_PLUGIN=On",
                 "-DWITH_DAV1D=Off",
                 "-DWITH_AOM_ENCODER=Off",
                 "-DWITH_AOM_DECODER=Off",
+		"-DWITH_OpenH264_ENCODER=Off",
+		"-DWITH_OpenH264_DECODER=Off",
                 "-DWITH_SvtEnc=Off",
                 "-DWITH_RAV1E=Off",
                 "-DENABLE_PLUGIN_LOADING=On",
