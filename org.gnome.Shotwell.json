@@ -1,7 +1,7 @@
 {
     "app-id": "org.gnome.Shotwell",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "46",
+    "runtime-version": "47",
     "sdk": "org.gnome.Sdk",
     "command": "shotwell",
     "finish-args": [
@@ -171,8 +171,8 @@
                         "url-template": "https://www.libraw.org/data/LibRaw-$version.tar.gz"
                     },
                     "type": "archive",
-                    "url": "https://www.libraw.org/data/LibRaw-0.21.2.tar.gz",
-                    "sha256": "fe7288013206854baf6e4417d0fb63ba4ed7227bf36fff021992671c2dd34b03"
+                    "url": "https://www.libraw.org/data/LibRaw-0.21.3.tar.gz",
+                    "sha256": "dba34b7fc1143503942fa32ad9db43e94f714e62a4a856e91617f8f3e1e0aa5c"
                 },
                 {
                     "type": "patch",
@@ -337,8 +337,8 @@
                         "name": "shotwell"
                     },
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/shotwell/0.32/shotwell-0.32.8.tar.xz",
-                    "sha256": "47063c0179e5d80f534373dc560e1ce8077aadd584eeef06c523a460e2f929c3"
+                    "url": "https://download.gnome.org/sources/shotwell/0.32/shotwell-0.32.10.tar.xz",
+                    "sha256": "26e45a61b5431b096ffcd176f115bd07be9a77a68335899542106e19e07f400e"
                 }
             ]
         }
