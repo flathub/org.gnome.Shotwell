@@ -196,6 +196,7 @@
                 "-Dbackend-gtk3=enabled",
                 "-Dbackend-gtk4=disabled",
                 "-Dbackend-qt5=disabled",
+                "-Dbackend-qt6=disabled",
                 "-Ddocs=false",
                 "-Dtests=false"
             ],
@@ -252,6 +253,8 @@
                 "-DWITH_AOM_DECODER=Off",
 		"-DWITH_OpenH264_ENCODER=Off",
 		"-DWITH_OpenH264_DECODER=Off",
+		"-DWITH_OpenJPEG_ENCODER=Off",
+		"-DWITH_OpenJPEG_DECODER=Off",
                 "-DWITH_SvtEnc=Off",
                 "-DWITH_RAV1E=Off",
                 "-DENABLE_PLUGIN_LOADING=On",
