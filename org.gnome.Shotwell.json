@@ -196,6 +196,7 @@
                 "-Dbackend-gtk3=enabled",
                 "-Dbackend-gtk4=disabled",
                 "-Dbackend-qt5=disabled",
+                "-Dbackend-qt6=disabled",
                 "-Ddocs=false",
                 "-Dtests=false"
             ],
@@ -245,10 +246,15 @@
             "config-opts": [
                 "-DCMAKE_INSTALL_LIBDIR=lib",
                 "-DCMAKE_BUILD_TYPE=Release",
+		"-DCMAKE_COMPILE_WARNING_AS_ERROR=OFF",
                 "-DWITH_LIBDE265_PLUGIN=On",
                 "-DWITH_DAV1D=Off",
                 "-DWITH_AOM_ENCODER=Off",
                 "-DWITH_AOM_DECODER=Off",
+		"-DWITH_OpenH264_ENCODER=Off",
+		"-DWITH_OpenH264_DECODER=Off",
+		"-DWITH_OpenJPEG_ENCODER=Off",
+		"-DWITH_OpenJPEG_DECODER=Off",
                 "-DWITH_SvtEnc=Off",
                 "-DWITH_RAV1E=Off",
                 "-DENABLE_PLUGIN_LOADING=On",
@@ -265,8 +271,8 @@
                         "url-template": "https://github.com/strukturag/libheif/releases/download/v$version/libheif-$version.tar.gz"
                     },
                     "type": "archive",
-                    "url": "https://github.com/strukturag/libheif/releases/download/v1.18.2/libheif-1.18.2.tar.gz",
-                    "sha256": "c4002a622bec9f519f29d84bfdc6024e33fd67953a5fb4dc2c2f11f67d5e45bf"
+                    "url": "https://github.com/strukturag/libheif/releases/download/v1.19.1/libheif-1.19.1.tar.gz",
+                    "sha256": "994913eb2a29c00c146d6f3d61e07d9ff0d8e9eccb0624d87e4be8b108c74e4b"
                 },
                 {
                     "type": "shell",
