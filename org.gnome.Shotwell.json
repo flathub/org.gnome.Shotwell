@@ -142,7 +142,12 @@
                 {
                     "x-checker-data": {
                         "type": "gnome",
-                        "name": "gexiv2"
+                        "name": "gexiv2",
+                        "stable-only": "true",
+                        "version-scheme": "odd-minor-is-unstable",
+                        "versions": {
+                            "<": "0.14.99"
+                        }
                     },
                     "type": "archive",
                     "url": "https://download.gnome.org/sources/gexiv2/0.14/gexiv2-0.14.5.tar.xz",
