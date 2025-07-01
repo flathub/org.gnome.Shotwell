@@ -311,7 +311,9 @@
                 {
                     "x-checker-data": {
                         "type": "gnome",
-                        "name": "gdk-pixbuf"
+                        "name": "gdk-pixbuf",
+                        "stable-only": "true",
+                        "version-scheme": "odd-minor-is-unstable"
                     },
                     "type": "archive",
                     "url": "https://download.gnome.org/sources/gdk-pixbuf/2.42/gdk-pixbuf-2.42.12.tar.xz",
