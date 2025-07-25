@@ -91,8 +91,8 @@
                     },
                     "type": "git",
                     "url": "https://github.com/benhoyt/inih",
-                    "commit": "9de2a5fe4956447a22a324e2efc0648c5aad5285",
-                    "tag": "r60"
+                    "commit": "3eda303b34610adc0554bdea08d02a25668c774c",
+                    "tag": "r61"
                 }
             ]
         },
