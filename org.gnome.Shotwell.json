@@ -91,8 +91,8 @@
                     },
                     "type": "git",
                     "url": "https://github.com/benhoyt/inih",
-                    "commit": "9de2a5fe4956447a22a324e2efc0648c5aad5285",
-                    "tag": "r60"
+                    "commit": "3eda303b34610adc0554bdea08d02a25668c774c",
+                    "tag": "r61"
                 }
             ]
         },
@@ -272,8 +272,8 @@
                         "url-template": "https://github.com/strukturag/libheif/releases/download/v$version/libheif-$version.tar.gz"
                     },
                     "type": "archive",
-                    "url": "https://github.com/strukturag/libheif/releases/download/v1.20.1/libheif-1.20.1.tar.gz",
-                    "sha256": "55cc76b77c533151fc78ba58ef5ad18562e84da403ed749c3ae017abaf1e2090"
+                    "url": "https://github.com/strukturag/libheif/releases/download/v1.20.2/libheif-1.20.2.tar.gz",
+                    "sha256": "68ac9084243004e0ef3633f184eeae85d615fe7e4444373a0a21cebccae9d12a"
                 },
                 {
                     "type": "shell",
