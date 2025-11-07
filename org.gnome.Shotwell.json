@@ -143,7 +143,7 @@
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "gexiv2",
-                        "stable-only": "true",
+                        "stable-only": true,
                         "version-scheme": "odd-minor-is-unstable",
                         "versions": {
                             "<": "0.14.99"
@@ -312,7 +312,7 @@
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "gdk-pixbuf",
-                        "stable-only": "true",
+                        "stable-only": true,
                         "version-scheme": "odd-minor-is-unstable"
                     },
                     "type": "archive",
