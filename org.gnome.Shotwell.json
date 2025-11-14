@@ -143,7 +143,7 @@
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "gexiv2",
-                        "stable-only": "true",
+                        "stable-only": true,
                         "version-scheme": "odd-minor-is-unstable",
                         "versions": {
                             "<": "0.14.99"
@@ -312,8 +312,11 @@
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "gdk-pixbuf",
-                        "stable-only": "true",
-                        "version-scheme": "odd-minor-is-unstable"
+                        "stable-only": true,
+                        "version-scheme": "odd-minor-is-unstable",
+                        "versions": {
+                          "<": "2.42.99"
+                        }
                     },
                     "type": "archive",
                     "url": "https://download.gnome.org/sources/gdk-pixbuf/2.42/gdk-pixbuf-2.42.12.tar.xz",
