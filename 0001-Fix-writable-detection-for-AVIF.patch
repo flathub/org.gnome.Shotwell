@@ -1,0 +1,51 @@
+From 0aa5a3f473988af9864980b6c3ec77dbb9aa2d42 Mon Sep 17 00:00:00 2001
+From: Jens Georg <mail@jensge.org>
+Date: Fri, 14 Nov 2025 18:14:10 +0100
+Subject: [PATCH] Fix writable detection for AVIF
+
+---
+ src/photos/AvifSupport.vala | 20 +++++++++++---------
+ 1 file changed, 11 insertions(+), 9 deletions(-)
+
+diff --git a/src/photos/AvifSupport.vala b/src/photos/AvifSupport.vala
+index 6a0dbf44..803ef824 100644
+--- a/src/photos/AvifSupport.vala
++++ b/src/photos/AvifSupport.vala
+@@ -100,6 +100,15 @@ public class AvifFileFormatDriver : PhotoFileFormatDriver {
+     public static void init() {
+         instance = new AvifFileFormatDriver();
+         AvifFileFormatProperties.init();
++
++        var formats = Gdk.Pixbuf.get_formats();
++        can_write = false;
++        foreach (var format in formats) {
++            if (format.get_name() == "avif") {
++                can_write = format.is_writable();
++                break;
++            }
++        }
+     }
+     
+     public static AvifFileFormatDriver get_instance() {
+@@ -114,16 +123,9 @@ public class AvifFileFormatDriver : PhotoFileFormatDriver {
+         return new AvifReader(filepath);
+     }
+ 
++    static bool can_write;
+     public override bool can_write_image() {
+-        try {
+-            var loader = new Gdk.PixbufLoader.with_type("avif");
+-            var writeable = loader.get_format().is_writable();
+-            loader.close();
+-            return writeable;
+-        } catch (Error err) {
+-            critical("Could not create aviv loader");
+-        }
+-        return true;
++        return false;
+     }
+     
+     public override bool can_write_metadata() {
+-- 
+2.51.1
+
