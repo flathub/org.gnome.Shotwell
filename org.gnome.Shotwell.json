@@ -32,6 +32,14 @@
         "*.la",
         "*.a"
     ],
+    "add-extensions": {
+        "org.gnome.Shotwell.HEIC": {
+            "directory": "lib/libheif",
+            "add-ld-path": "lib",
+            "bundle": true,
+            "autodelete": true
+        }
+    },
     "modules": [
         {
             "name": "libusb",
@@ -207,13 +215,131 @@
             ]
         },
         {
+            "name": "de256",
+            "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DCMAKE_INSTALL_PREFIX=/app/lib/libheif",
+                "-DCMAKE_BUILD_TYPE=Release",
+                "-DENABLE_DECODER=Off",
+                "-DENABLE_ENCODER=OfF"
+            ],
+            "cleanup": [
+                "/lib/libheif/include",
+                "/lib/libheif/lib/cmake",
+                "/lib/libheif/lib/pkgconfig"
+            ],
+            "sources": [
+                {
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 11239,
+                        "url-template": "https://github.com/strukturag/libde265/releases/download/v$version/libde265-$version.tar.gz"
+                    },
+                    "type": "archive",
+                    "url": "https://github.com/strukturag/libde265/releases/download/v1.0.16/libde265-1.0.16.tar.gz",
+                    "sha256": "b92beb6b53c346db9a8fae968d686ab706240099cdd5aff87777362d668b0de7"
+                }
+            ]
+        },
+        {
+            "name": "libheif",
+            "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DCMAKE_INSTALL_LIBDIR=lib",
+                "-DCMAKE_BUILD_TYPE=Release",
+                "-DCMAKE_COMPILE_WARNING_AS_ERROR=OFF",
+                "-DWITH_LIBDE265_PLUGIN=On",
+                "-DWITH_DAV1D=Off",
+                "-DWITH_AOM_ENCODER=Off",
+                "-DWITH_AOM_DECODER=Off",
+                "-DWITH_OpenH264_ENCODER=Off",
+                "-DWITH_OpenH264_DECODER=Off",
+                "-DWITH_OpenJPEG_ENCODER=Off",
+                "-DWITH_OpenJPEG_DECODER=Off",
+                "-DWITH_SvtEnc=Off",
+                "-DWITH_RAV1E=Off",
+                "-DENABLE_PLUGIN_LOADING=On",
+                "-DWITH_EXAMPLES=Off"
+            ],
+            "build-options": {
+                "append-pkg-config-path": "/app/lib/libheif/lib/pkgconfig"
+            },
+            "sources": [
+                {
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 64439,
+                        "url-template": "https://github.com/strukturag/libheif/releases/download/v$version/libheif-$version.tar.gz"
+                    },
+                    "type": "archive",
+                    "url": "https://github.com/strukturag/libheif/releases/download/v1.20.2/libheif-1.20.2.tar.gz",
+                    "sha256": "68ac9084243004e0ef3633f184eeae85d615fe7e4444373a0a21cebccae9d12a"
+                },
+                {
+                    "type": "shell",
+                    "commands": [
+                        "sed -i 's|DESTINATION ${GDKPIXBUF2_MODULE_DIR}|DESTINATION /app/lib/gdk-pixbuf-2.0/2.10.0/loaders|' gdk-pixbuf/CMakeLists.txt"
+                    ]
+                },
+                {
+                    "type": "shell",
+                    "commands": [
+                        "sed -i 's|find_package(Doxygen)|set(DOXYGEN_FOUND OFF)|' CMakeLists.txt"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "gdk-pixbuf",
+            "cleanup": [
+                "/bin/*"
+            ],
+            "post-install": [
+                "rm /app/lib/libgdk_pixbuf-2.0.so*",
+                "rm /app/lib/pkgconfig/gdk-pixbuf-2.0.pc",
+                "rm /app/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache"
+            ],
+            "buildsystem": "meson",
+            "config-opts": [
+                "-Dgtk_doc=false",
+                "-Dman=false",
+                "-Dothers=enabled",
+                "-Dtests=false",
+                "-Dinstalled_tests=false"
+            ],
+            "sources": [
+                {
+                    "x-checker-data": {
+                        "type": "gnome",
+                        "name": "gdk-pixbuf",
+                        "stable-only": true,
+                        "version-scheme": "odd-minor-is-unstable",
+                        "versions": {
+                            "<": "2.42.99"
+                        }
+                    },
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/gdk-pixbuf/2.42/gdk-pixbuf-2.42.12.tar.xz",
+                    "sha256": "b9505b3445b9a7e48ced34760c3bcb73e966df3ac94c95a148cb669ab748e3c7"
+                }
+            ]
+        },
+        {
+            "name": "update-pixbuf-loaders",
+            "buildsystem": "simple",
+            "build-commands": [
+                "GDK_PIXBUF_MODULEDIR=/app/lib/gdk-pixbuf-2.0/2.10.0/loaders/ gdk-pixbuf-query-loaders > /app/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache"
+            ]
+        },
+        {
             "name": "shotwell",
             "buildsystem": "meson",
             "config-opts": [
                 "-Dinstall_apport_hook=false",
                 "-Dfatal_warnings=false",
                 "-Dface_detection_helper_bus=private",
-                "-Dface_detection=false"
+                "-Dface_detection=false",
+                "-Dextra_pixbuf_loaders_path=/app/lib/gdk-pixbuf-2.0/2.10.0"
             ],
             "sources": [
                 {
@@ -224,10 +350,6 @@
                     "type": "archive",
                     "url": "https://download.gnome.org/sources/shotwell/0.32/shotwell-0.32.14.tar.xz",
                     "sha256": "41b122f55d245a4b68d687085fd92398d25f0bbca5483a98b2b7932be4f289da"
-                },
-                {
-                    "type": "patch",
-                    "path": "0001-Fix-writable-detection-for-AVIF.patch"
                 }
             ]
         }
