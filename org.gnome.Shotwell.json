@@ -42,21 +42,6 @@
     },
     "modules": [
         {
-            "name": "libusb",
-            "sources": [
-                {
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 1749,
-                        "url-template": "https://github.com/libusb/libusb/archive/v$version.tar.gz"
-                    },
-                    "type": "archive",
-                    "url": "https://github.com/libusb/libusb/archive/v1.0.29.tar.gz",
-                    "sha256": "7c2dd39c0b2589236e48c93247c986ae272e27570942b4163cb00a060fcf1b74"
-                }
-            ]
-        },
-        {
             "name": "libghoto2",
             "cleanup": [
                 "/bin",
