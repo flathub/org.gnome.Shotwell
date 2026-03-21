@@ -261,6 +261,10 @@
                     "sha256": "75f530b7154bc93e7ecf846edfc0416bf5f490612de8c45983c36385aa742b42"
                 },
                 {
+                    "type": "patch",
+                    "path": "heif-disable-avif-support.patch"
+                },
+                {
                     "type": "shell",
                     "commands": [
                         "sed -i 's|DESTINATION ${GDKPIXBUF2_MODULE_DIR}|DESTINATION /app/lib/gdk-pixbuf-2.0/2.10.0/loaders|' gdk-pixbuf/CMakeLists.txt"
@@ -280,8 +284,6 @@
                 "/bin/*"
             ],
             "post-install": [
-                "rm /app/lib/libgdk_pixbuf-2.0.so*",
-                "rm /app/lib/pkgconfig/gdk-pixbuf-2.0.pc",
                 "rm /app/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache"
             ],
             "buildsystem": "meson",
@@ -313,6 +315,8 @@
             "name": "update-pixbuf-loaders",
             "buildsystem": "simple",
             "build-commands": [
+                "cp /usr/lib/*/gdk-pixbuf-2.0/2.10.0/loaders/*avif* /app/lib/gdk-pixbuf-2.0/2.10.0/loaders/",
+                "cp /usr/lib/*/gdk-pixbuf-2.0/2.10.0/loaders/*jxl* /app/lib/gdk-pixbuf-2.0/2.10.0/loaders/",
                 "GDK_PIXBUF_MODULEDIR=/app/lib/gdk-pixbuf-2.0/2.10.0/loaders/ gdk-pixbuf-query-loaders > /app/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache"
             ]
         },
