@@ -1,0 +1,19 @@
+diff --git i/gdk-pixbuf/pixbufloader-heif.c w/gdk-pixbuf/pixbufloader-heif.c
+index 9666e798..2530ae9f 100644
+--- i/gdk-pixbuf/pixbufloader-heif.c
++++ w/gdk-pixbuf/pixbufloader-heif.c
+@@ -217,14 +217,12 @@ void fill_info(GdkPixbufFormat* info)
+   static gchar* mime_types[] = {
+       "image/heif",
+       "image/heic",
+-      "image/avif",
+       NULL
+   };
+ 
+   static gchar* extensions[] = {
+       "heif",
+       "heic",
+-      "avif",
+       NULL
+   };
+ 
