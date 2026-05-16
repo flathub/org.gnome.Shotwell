@@ -32,14 +32,6 @@
         "*.la",
         "*.a"
     ],
-    "add-extensions": {
-        "org.gnome.Shotwell.HEIC": {
-            "directory": "lib/libheif",
-            "add-ld-path": "lib",
-            "bundle": true,
-            "autodelete": true
-        }
-    },
     "modules": [
         {
             "name": "libghoto2",
@@ -200,97 +192,14 @@
             ]
         },
         {
-            "name": "de256",
-            "buildsystem": "cmake-ninja",
-            "config-opts": [
-                "-DCMAKE_INSTALL_PREFIX=/app/lib/libheif",
-                "-DCMAKE_BUILD_TYPE=Release",
-                "-DENABLE_DECODER=Off",
-                "-DENABLE_ENCODER=OfF"
-            ],
-            "cleanup": [
-                "/lib/libheif/include",
-                "/lib/libheif/lib/cmake",
-                "/lib/libheif/lib/pkgconfig"
-            ],
-            "sources": [
-                {
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 11239,
-                        "url-template": "https://github.com/strukturag/libde265/releases/download/v$version/libde265-$version.tar.gz"
-                    },
-                    "type": "archive",
-                    "url": "https://github.com/strukturag/libde265/releases/download/v1.0.18/libde265-1.0.18.tar.gz",
-                    "sha256": "800478f3bf35f0621b14928ceb317579f3e8b23de4bd2aac29b6cb8be962bbd8"
-                }
-            ]
-        },
-        {
-            "name": "libheif",
-            "buildsystem": "cmake-ninja",
-            "config-opts": [
-                "-DCMAKE_INSTALL_LIBDIR=lib",
-                "-DCMAKE_BUILD_TYPE=Release",
-                "-DCMAKE_COMPILE_WARNING_AS_ERROR=OFF",
-                "-DWITH_LIBDE265_PLUGIN=On",
-                "-DWITH_DAV1D=Off",
-                "-DWITH_AOM_ENCODER=Off",
-                "-DWITH_AOM_DECODER=Off",
-                "-DWITH_OpenH264_ENCODER=Off",
-                "-DWITH_OpenH264_DECODER=Off",
-                "-DWITH_OpenJPEG_ENCODER=Off",
-                "-DWITH_OpenJPEG_DECODER=Off",
-                "-DWITH_SvtEnc=Off",
-                "-DWITH_RAV1E=Off",
-                "-DENABLE_PLUGIN_LOADING=On",
-                "-DWITH_EXAMPLES=Off"
-            ],
-            "build-options": {
-                "append-pkg-config-path": "/app/lib/libheif/lib/pkgconfig"
-            },
-            "sources": [
-                {
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 64439,
-                        "url-template": "https://github.com/strukturag/libheif/releases/download/v$version/libheif-$version.tar.gz"
-                    },
-                    "type": "archive",
-                    "url": "https://github.com/strukturag/libheif/releases/download/v1.21.2/libheif-1.21.2.tar.gz",
-                    "sha256": "75f530b7154bc93e7ecf846edfc0416bf5f490612de8c45983c36385aa742b42"
-                },
-                {
-                    "type": "patch",
-                    "path": "heif-disable-avif-support.patch"
-                },
-                {
-                    "type": "shell",
-                    "commands": [
-                        "sed -i 's|DESTINATION ${GDKPIXBUF2_MODULE_DIR}|DESTINATION /app/lib/gdk-pixbuf-2.0/2.10.0/loaders|' gdk-pixbuf/CMakeLists.txt"
-                    ]
-                },
-                {
-                    "type": "shell",
-                    "commands": [
-                        "sed -i 's|find_package(Doxygen)|set(DOXYGEN_FOUND OFF)|' CMakeLists.txt"
-                    ]
-                }
-            ]
-        },
-        {
             "name": "gdk-pixbuf",
             "cleanup": [
                 "/bin/*"
-            ],
-            "post-install": [
-                "rm /app/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache"
             ],
             "buildsystem": "meson",
             "config-opts": [
                 "-Dgtk_doc=false",
                 "-Dman=false",
-                "-Dothers=enabled",
                 "-Dtests=false",
                 "-Dinstalled_tests=false"
             ],
@@ -302,22 +211,17 @@
                         "stable-only": true,
                         "version-scheme": "odd-minor-is-unstable",
                         "versions": {
-                            "<": "2.42.99"
+                            "<": "2.44.99"
                         }
                     },
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/gdk-pixbuf/2.42/gdk-pixbuf-2.42.12.tar.xz",
-                    "sha256": "b9505b3445b9a7e48ced34760c3bcb73e966df3ac94c95a148cb669ab748e3c7"
+                    "url": "https://download.gnome.org/sources/gdk-pixbuf/2.44/gdk-pixbuf-2.44.6.tar.xz",
+                    "sha256": "140c2d0b899fcf853ee92b26373c9dc228dbcde0820a4246693f4328a27466fa"
+                },
+                {
+                    "type": "patch",
+                    "path": "8b83535374f445b3b2a75ea762b893ef5ce8e295.patch"
                 }
-            ]
-        },
-        {
-            "name": "update-pixbuf-loaders",
-            "buildsystem": "simple",
-            "build-commands": [
-                "cp /usr/lib/*/gdk-pixbuf-2.0/2.10.0/loaders/*avif* /app/lib/gdk-pixbuf-2.0/2.10.0/loaders/",
-                "cp /usr/lib/*/gdk-pixbuf-2.0/2.10.0/loaders/*jxl* /app/lib/gdk-pixbuf-2.0/2.10.0/loaders/",
-                "GDK_PIXBUF_MODULEDIR=/app/lib/gdk-pixbuf-2.0/2.10.0/loaders/ gdk-pixbuf-query-loaders > /app/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache"
             ]
         },
         {
