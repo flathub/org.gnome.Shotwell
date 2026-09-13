@@ -1,0 +1,36 @@
+From 217f76a08ec2b9d87c4660589862c703a2dd6d74 Mon Sep 17 00:00:00 2001
+From: Jens Georg <mail@jensge.org>
+Date: Sun, 13 Sep 2026 18:33:26 +0200
+Subject: [PATCH] Fix metainfo file
+
+---
+ data/org.gnome.Shotwell.metainfo.xml.in | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/data/org.gnome.Shotwell.metainfo.xml.in b/data/org.gnome.Shotwell.metainfo.xml.in
+index b41678287..f3f350d45 100644
+--- a/data/org.gnome.Shotwell.metainfo.xml.in
++++ b/data/org.gnome.Shotwell.metainfo.xml.in
+@@ -25,7 +25,7 @@
+     </p>
+   </description>
+   <url type="homepage">https://shotwell-project.org</url>
+-  <url type="bugtracker">https://gitlab.gnome.org/GNOME/shotwell/issues</url>
++  <url type="bugtracker">https://gitlab.gnome.org/GNOME/shotwell/-/work-items</url>
+   <url type="help">https://shotwell-project.org/doc/html</url>
+   <url type="translate">https://l10n.gnome.org/module/shotwell/</url>
+   <url type="vcs-browser">https://gitlab.gnome.org/GNOME/shotwell</url>
+@@ -62,8 +62,10 @@
+   <releases>
+       <release version="33.0" date="2026-09-13" urgency="medium" type="stable">
+           <description>
++            <p>
+               This release moves Shotwell to GTK4 for better compatiblity with Wayland and
+               future-proofing.
++            </p>
+           </description>
+       </release>
+   </releases>
+-- 
+2.55.0
+

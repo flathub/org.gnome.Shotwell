@@ -236,6 +236,10 @@
                     "type": "archive",
                     "url": "https://download.gnome.org/sources/shotwell/33.0/shotwell-33.0.tar.xz",
                     "sha256": "79f2fa2bd5df3b18d5301012085222eb9a6e548593f6d5dbcea6d1e8559cb797"
+                },
+                {
+                    "type": "patch",
+                    "path": "0001-Fix-metainfo-file.patch"
                 }
             ]
         }
