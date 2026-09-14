@@ -121,14 +121,11 @@
                         "type": "gnome",
                         "name": "gexiv2",
                         "stable-only": true,
-                        "version-scheme": "odd-minor-is-unstable",
-                        "versions": {
-                            "<": "0.14.99"
-                        }
+                        "version-scheme": "odd-minor-is-unstable"
                     },
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/gexiv2/0.14/gexiv2-0.14.7.tar.xz",
-                    "sha256": "373b67b24f1a7b5c0606aaf0ea00b352f9511751e21deba0bac650bd5159c93d"
+                    "url": "https://download.gnome.org/sources/gexiv2/0.16/gexiv2-0.16.2.tar.xz",
+                    "sha256": "aad9e240fdffbe85e390f46ee0a567e251baea5c29c3d8690260388683dc8d0a"
                 }
             ]
         },
@@ -171,8 +168,8 @@
             "config-opts": [
                 "--libdir=/app/lib",
                 "--buildtype=debugoptimized",
-                "-Dbackend-gtk3=enabled",
-                "-Dbackend-gtk4=disabled",
+                "-Dbackend-gtk3=disabled",
+                "-Dbackend-gtk4=enabled",
                 "-Dbackend-qt5=disabled",
                 "-Dbackend-qt6=disabled",
                 "-Ddocs=false",
@@ -237,8 +234,12 @@
                         "name": "shotwell"
                     },
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/shotwell/0.32/shotwell-0.32.17.tar.xz",
-                    "sha256": "0a56684e98817c3103f54a648fe9400427c76a25a7b111457fc1d860c3167672"
+                    "url": "https://download.gnome.org/sources/shotwell/33.0/shotwell-33.0.tar.xz",
+                    "sha256": "79f2fa2bd5df3b18d5301012085222eb9a6e548593f6d5dbcea6d1e8559cb797"
+                },
+                {
+                    "type": "patch",
+                    "path": "0001-Fix-metainfo-file.patch"
                 }
             ]
         }
