@@ -1,7 +1,7 @@
 {
     "app-id": "org.gnome.Shotwell",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "50",
+    "runtime-version": "51",
     "sdk": "org.gnome.Sdk",
     "command": "shotwell",
     "finish-args": [
@@ -161,71 +161,14 @@
                 }
             ]
         },
-        {
-            "name": "libportal",
-            "buildsystem": "meson",
-            "builddir": true,
-            "config-opts": [
-                "--libdir=/app/lib",
-                "--buildtype=debugoptimized",
-                "-Dbackend-gtk3=disabled",
-                "-Dbackend-gtk4=enabled",
-                "-Dbackend-qt5=disabled",
-                "-Dbackend-qt6=disabled",
-                "-Ddocs=false",
-                "-Dtests=false"
-            ],
-            "sources": [
-                {
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 230124,
-                        "url-template": "https://github.com/flatpak/libportal/releases/download/$version/libportal-$version.tar.xz"
-                    },
-                    "type": "archive",
-                    "url": "https://github.com/flatpak/libportal/releases/download/0.11.0/libportal-0.11.0.tar.xz",
-                    "sha256": "abb9e452a1c372133bd3eb8f0bb30d07b2d0a8fb02001c4155cf287555db4040"
-                }
-            ]
-        },
-        {
-            "name": "gdk-pixbuf",
-            "cleanup": [
-                "/bin/*"
-            ],
-            "buildsystem": "meson",
-            "config-opts": [
-                "-Dgtk_doc=false",
-                "-Dman=false",
-                "-Dtests=false",
-                "-Dinstalled_tests=false"
-            ],
-            "sources": [
-                {
-                    "x-checker-data": {
-                        "type": "gnome",
-                        "name": "gdk-pixbuf",
-                        "stable-only": true,
-                        "version-scheme": "odd-minor-is-unstable",
-                        "versions": {
-                            "<": "2.44.8"
-                        }
-                    },
-                    "type": "archive",
-                    "url": "https://download.gnome.org/sources/gdk-pixbuf/2.44/gdk-pixbuf-2.44.7.tar.xz",
-                    "sha256": "172f80e3626ec31520a970400f1a3694e04718f6c2cd2885f75250fb5a6995a4"
-                }
-            ]
-        },
-        {
+	{
             "name": "shotwell",
             "buildsystem": "meson",
             "config-opts": [
                 "-Dinstall_apport_hook=false",
                 "-Dfatal_warnings=false",
                 "-Dface_detection_helper_bus=private",
-                "-Dface_detection=false",
-                "-Dextra_pixbuf_loaders_path=/app/lib/gdk-pixbuf-2.0/2.10.0"
+                "-Dface_detection=false"
             ],
             "sources": [
                 {
