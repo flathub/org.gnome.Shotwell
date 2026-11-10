@@ -168,8 +168,7 @@
                 "-Dinstall_apport_hook=false",
                 "-Dfatal_warnings=false",
                 "-Dface_detection_helper_bus=private",
-                "-Dface_detection=false",
-                "-Dextra_pixbuf_loaders_path=/app/lib/gdk-pixbuf-2.0/2.10.0"
+                "-Dface_detection=false"
             ],
             "sources": [
                 {
